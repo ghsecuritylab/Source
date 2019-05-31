@@ -1,0 +1,9 @@
+*.orig
+*~
+*.o
+*.so
+*.a
+l2tpd
+.depend
+config.cache
+config.log

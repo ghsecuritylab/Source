@@ -1,0 +1,1 @@
+getstatus  = <% get_status(); %>;

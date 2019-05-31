@@ -1,0 +1,783 @@
+<HTML>
+<HEAD>
+<TITLE>sw_discovery</TITLE>
+</HEAD>
+<BODY>
+<H1>sw_discovery</H1><H3>OVERVIEW</H3>The sw_discovery functions manage a session of interaction with the discovery network.  Each of these functions performs an IPC call to a system service.
+<P>
+To interact with the discovery network, first you create a session by calling <A HREF="#sw_discovery_init"><CODE>sw_discovery_init.</CODE></A> Then you set up reply functions by calling <A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>, <A HREF="#sw_discovery_browse_domains"><CODE>sw_discovery_browse_domains</CODE></A>, <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>, and/or <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>. The reply functions are callbacks that you write, through which your code is notified that new services have become available, an attempt to publish a service succeeded or failed, etc.
+		<p><b><i>Console applications</i></b></p>
+		<p>When writing console applications using Howl, call <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A> to yield the CPU to Howl and enable your reply functions to be called as those events occur.
+</p>
+		<p><b><i>GUI applications</i></b></p>
+		<P>On Windows, Howl has been integrated into the  windows message pump, thus there is no need to call <a href="#sw_discovery_run"><CODE>sw_discovery_run</CODE></a>.  Your callbacks will be invoked using the standard event dispatch routines that Windows provides.
+		<p>On Mac OS X, Howl has been integrated into CFRunLoop, thus there is no need to call <a href="#sw_discovery_run"><CODE>sw_discovery_run</CODE></a>.  Your callbacks will be invoked using the standard event dispatch routines that Mac OS X provides.</p>
+		<p>In other environments (notably X11), Howl has not been integrated into the message loop, so extra work needs to be done to make sure events are dispatched both for UI events and Howl events.</p>
+		<P>Here are three solutions:
+		<P>1. Call <a href="#sw_discovery_socket">sw_discovery_socket</a> to return the socket that Howl uses to communicate with mDNSResponder and <a href="#sw_discovery_read_socket">sw_discovery_read_socket</a> to read data from the socket.  This is very useful if it is necessary to integrate Howl with a custom select loop.
+		<p>2. Put all Howl code into one thread, and have the UI run in another thread.</p>
+		<P>3. Or, after starting the session with <A HREF="#sw_discovery_init"><CODE>sw_discovery_init</CODE></A>, call <a href="#sw_discovery_salt"><CODE>sw_discovery_salt</CODE></a> to get the salt object.  Call <a href="salt.html#sw_salt_step"><CODE>sw_salt_step</CODE></a> to dispatch Howl events. See <a href="salt.html">sw_salt</a> for more information.<P>
+<HR><A NAME="sw_discovery_init"><H3>FUNCTION</H3></A><H2>sw_discovery_init</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_init</CODE>(
+   sw_discovery *session)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Creates a new discovery session. <CODE>session</CODE> is allocated by the user and filled in by Howl.
+<P>
+The session created by <CODE>sw_discovery_init</CODE> is not thread-safe.
+		<P>
+In a session created by <CODE>sw_discovery_init</CODE>, after calling each discovery function that calls a reply function, you must call <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A> to yield the CPU in console applications. Only then will the reply functions be called.  In Windows and Mac OS X GUI applications, it is not necessary to call <a href="#sw_discovery_run">sw_discovery_run</a>.
+		<p>The session will attempt to establish a link to an external mDNSResponder service.</p>
+		<P>
+		<H3>EXAMPLE</H3><PRE><CODE>int run_complete_discovery_session(void)
+{
+   sw_discovery session;
+   if (sw_discovery_init(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+   .
+   .  // set up reply functions here
+   .
+   sw_discovery_run(session);
+}
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_fina"><CODE>sw_discovery_fina</CODE></A>, <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A>, <A HREF="#sw_discovery_salt"><CODE>sw_discovery_salt</CODE></A><p></p>
+		<hr>
+		<a name="sw_discovery_init_with_flags">
+			<h3>FUNCTION</h3>
+		</a>
+		<h2>sw_discovery_init_with_flags</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_result</code></a>
+<code>sw_discovery_init_with_flags</code>(
+   sw_discovery         *  session,
+   sw_discovery_init_flags flags)
+</code></pre>
+		<h3>DESCRIPTION</h3>
+		Creates a new discovery session. <code>session</code> is allocated by the user and filled in by Howl.
+		<p>The session created by <code>sw_discovery_init_with_flags</code> is not thread-safe.</p>
+		<p>In a session created by <code>sw_discovery_init_with_flags</code>, after calling each discovery function that calls a reply function, you must call <a href="#sw_discovery_run"><code>sw_discovery_run</code></a> to yield the CPU in console applications. Only then will the reply functions be called. In Windows and Mac OS X GUI applications, it is not necessary to call <a href="#sw_discovery_run">sw_discovery_run</a>.</p>
+		<p>The session will attempt to establish a link to an mDNSResponder service based on the flags passed in.  If SW_DISCOVERY_USE_SHARED_SERVICE is specified, Howl attempts to find an mDNSResponder running externally.  If that fails, and SW_DISCOVERY_USE_PRIVATE_SERVICE is specified, Howl will start an mDNSResponder thread in the calling application.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre><code>int run_complete_discovery_session(void)
+{
+   sw_discovery session;
+   if (sw_discovery_init_with_flags(&amp;session, SW_DISCOVERY_USE_SHARED_SERVICE | SW_DISCOVERY_USE_PRIVATE_SERVICE) != SW_OKAY)
+   {
+      fprintf(stderr, &quot;init failed\n&quot;);
+      return -1;
+   }
+   .
+   .  // set up reply functions here
+   .
+   sw_discovery_run(session);
+}
+</code>
+</pre>
+		<h3>SEE ALSO</h3>
+		<a href="#sw_discovery_fina"><code>sw_discovery_fina</code></a>, <a href="#sw_discovery_run"><code>sw_discovery_run</code></a>, <a href="#sw_discovery_salt"><code>sw_discovery_salt</code></a>
+		<p></p>
+		<HR><A NAME="sw_discovery_salt"><H3>FUNCTION</H3></A><H2>sw_discovery_salt</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_salt</CODE>(
+   sw_discovery  session,
+   sw_salt      * salt)
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>
+		Returns the underlying salt object that this session uses for event dispatch..
+		<P>
+The session created by <CODE>sw_discovery_init</CODE> is not thread-safe. Depending on the contents of <CODE>salt</CODE>, it can be suitable for use inside a GUI thread.
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>int run_complete_discovery_session(void)
+{
+   sw_discovery session;
+   sw_salt salt;
+   if (sw_discovery_init_(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+
+   if (sw_discovery_salt(session, &amp;salt) != SW_OKAY)
+   {
+      fprintf(stderr, &quot;salt failed\n&quot;);
+      return -1;
+   }
+   .
+   .  // set up reply functions here
+   .
+   while (1)
+   {
+      sw_ulong msecs = 500;
+
+      sw_salt_step(salt, &amp;msecs);
+   }
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_fina"><CODE>sw_discovery_fina</CODE></A>, <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A>
+		<P>
+		<HR><A NAME="sw_discovery_fina"><H3>FUNCTION</H3></A><H2>sw_discovery_fina</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_fina</CODE>(
+   sw_discovery session)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Closes a discovery session.  Deallocates all resources associated with the session: memory, sockets, everything else.
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>int run_complete_discovery_session(void)
+{
+   sw_discovery session;
+
+   if (sw_discovery_init(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+   .
+   .  // session work here
+   .
+   sw_discovery_fina(session);
+   ...
+}
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_init"><CODE>sw_discovery_init</CODE></A>, <A HREF="#sw_discovery_init_with_salt"><CODE>sw_discovery_init_with_salt</CODE></A>
+		<hr>
+		<h3><a name="sw_discovery_publish_host">FUNCTION</a></h3>
+		<h2>sw_discovery_publish_host</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_result</code></a>
+<code>sw_discovery_publish_host</code>(
+   sw_discovery                   session,
+   sw_uint32                      interface_index,
+   sw_const_string                name,
+   sw_const_string                domain,
+   sw_ipv4_address                address,
+   <a href="#sw_discovery_publish_reply"><code>sw_discovery_publish_reply</code></a>     reply,
+   sw_opaque                      extra,
+   sw_discovery_oid             * oid)
+</code></pre>
+		<h3>DESCRIPTION</h3>
+		Publishes a discovery host. After calling <code>sw_discovery_publish_host</code>, the host's availability is known to all processes on the discovery network.
+		<p><code>session</code>: The discovery session.</p>
+		<p><code>interface_index</code>: The interface on which to publish. Pass 0 to mean all interfaces</p>
+		<p><code>name</code>: The name of the host to publish. UTF-8 encoded.</p>
+		<p><code>domain</code>: The name of the Zeroconf domain. UTF-8 encoded. Pass a NULL for the default domain, which is &quot;.local&quot;.</p>
+		<p>address: The address of the host.</p>
+		<p><code>reply</code>: A pointer to the reply function. In reply to the publish call, the Howl system service calls the reply function to return the status of the publish operation. A single call to <code>sw_discovery_publish_host</code> may trigger the reply function to be called multiple times.</p>
+		<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+		<p><code>oid</code>: Identifies the specific call to <code>sw_discovery_publish_host</code>, enabling other functions, like the reply function, to refer to the present attempt to publish. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre><code>...
+sw_ipv4_address  address;
+sw_discovery_oid oid;
+
+sw_ipv4_address_init_from_name(&amp;address, &quot;192.168.2.13&quot;);
+
+if ((result = sw_discovery_publish_host(
+   session,
+   0,
+   &quot;iTunes_Host&quot;,
+   NULL,
+   address,
+   my_publish_reply,
+   NULL,
+   &amp;oid)) != SW_OKAY)
+{
+   fprintf(stderr, &quot;publish failed: %d\n&quot;, result);
+   return -1;
+}
+
+sw_discovery_run(session);
+...
+</code>
+</pre>
+		<h3>SEE ALSO</h3>
+		<a href="#sw_discovery_cancel"><code>sw_discovery_cancel</code></a>, <a href="#sw_discovery_run"><code>sw_discovery_run</code></a>, <a href="#sw_discovery_publish_reply"><code>sw_discovery_publish_reply</code></a>
+		<p></p>
+		<hr>
+		<h3><a name="sw_discovery_publish">FUNCTION</a></h3>
+		<H2>sw_discovery_publish</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_publish</CODE>(
+   sw_discovery                  session,
+   sw_uint32                     interface_index,
+   sw_const_string               name,
+   sw_const_string               type,
+   sw_const_string               domain,
+   sw_const_string               host,
+   sw_port                       port,
+   sw_octets                     text_record,
+   sw_ulong                      text_record_len,
+   <A HREF="#sw_discovery_publish_reply"><CODE>sw_discovery_publish_reply</CODE></A>    reply,
+   sw_opaque                     extra,
+   sw_discovery_oid            * oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Publishes a discovery service.  After calling <CODE>sw_discovery_publish</CODE>, the service's availability is known to all processes on the discovery network.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<CODE>interface_index</CODE>: The interface on which to publish. Pass 0 for all interfaces.
+<P>
+<CODE>name</CODE>: The name of the service to publish. UTF-8 encoded.
+<P>
+<CODE>type</CODE>: The name of the type of the service, for example "_http._tcp.".  UTF-8 encoded.  See <A HREF="http://zeroconf.org" TARGET="_top">zeroconf.org</A> and <A HREF="http://www.ietf.org/rfc/rfc2782.txt" TARGET="_top">RFC2782</A> for details on the format of service type names.
+<P>
+<CODE>domain</CODE>: The name of the Zeroconf domain. UTF-8 encoded.  Pass a NULL for the default domain, which is ".local".
+
+<p>host: The host name of the service.  UTF-8 encoded.  Pass a NULL for the default host, which is the machine that is running the app.</p>
+<P>
+<CODE>port</CODE>: The port number of the socket that the service can be contacted on. For example, an FTP server should be published as residing at port 21.
+<P><CODE>text_record</CODE>: An opaque buffer specifying a DNS style text record for this service.  See <a href="txt_rec.html">sw_text_record</a> for more information on how to construct a text record.  Can be NULL.
+		<p><CODE>text_record_len</CODE>: The length of the text record. See <a href="txt_rec.html">sw_text_record</a> for more information on how to construct a text record.  If text record is NULL, then this parameter must be 0.</p>
+		<P>
+<CODE>reply</CODE>: A pointer to the reply function. In reply to the publish call, the Howl system service calls the reply function to return the status of the publish operation. A single call to <CODE>sw_discovery_publish</CODE> may trigger the reply function to be called multiple times.
+<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+<p><code>oid</code>: Identifies the specific call to <code>sw_discovery_publish_host</code>, enabling other functions, like the reply function, to refer to the present attempt to publish. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>...
+sw_discovery_oid oid;
+
+if ((result = sw_discovery_publish(
+   session,
+   0,
+   "My Web Server",
+   "_http._tcp.",
+   NULL,
+   80,
+   NULL,
+   0,
+   my_publish_reply,
+   NULL,
+   &amp;oid)) != SW_OKAY)
+{
+   fprintf(stderr, "publish failed: %d\n", result);
+   return -1;
+}
+
+sw_discovery_run(session);
+...
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_cancel"><CODE>sw_discovery_cancel</CODE></A>, <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A>, <A HREF="#sw_discovery_publish_reply"><CODE>sw_discovery_publish_reply</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_browse_domains"><H3>FUNCTION</H3></A><H2>sw_discovery_browse_domains</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_browse_domains</CODE>(
+   sw_discovery                 session,
+   sw_uint32                    interface_index,
+   <A HREF="#sw_discovery_browse_reply"><CODE>sw_discovery_browse_reply</CODE></A>    reply,
+   sw_opaque                    extra,
+   sw_discovery_oid           * oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Causes Howl to notify your program of the existence of every accessible discovery domain.  After calling <CODE>sw_discovery_browse_domains</CODE>, the Howl system service calls your reply function once for each known domain on the discovery network, and each time a new domain appears on the network.
+<P>
+To browse discovery services rather than domains, see <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<CODE>reply</CODE>: A pointer to the reply function.
+<P>
+<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+<P>
+<p><code>oid</code>: Identifies the specific call, enabling other functions, like the reply function, to refer to the correct call. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>
+sw_discovery_oid oid;
+
+if (sw_discovery_browse_domains(
+   session,
+   0,
+   my_browse_reply,
+   NULL,
+   &amp;oid) != SW_OKAY)
+{
+   fprintf(stderr, "sw_discovery_browse_domains failed: %d\n", result);
+   return -1;
+}
+
+sw_discovery_run(session);
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_cancel"><CODE>sw_discovery_cancel</CODE></A>, <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>, <A HREF="#sw_discovery_browse_reply"><CODE>sw_discovery_browse_reply</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_browse"><H3>FUNCTION</H3></A><H2>sw_discovery_browse</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_browse</CODE>(
+   sw_discovery                 session,
+   sw_uint32                    interface_index,
+   sw_const_string              type,
+   sw_const_string              domain,
+   <A HREF="#sw_discovery_browse_reply"><CODE>sw_discovery_browse_reply</CODE></A>    reply,
+   sw_opaque                    extra,
+   sw_discovery_oid           * oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Causes Howl to notify your program of the existence every discovery service of a specified type. After calling <CODE>sw_discovery_browse</CODE>, the Howl system service calls your reply function once for each known service of the specified type on the discovery network, and each time a new service appears on the network or an old service disappears.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<CODE>interface_index</CODE>: The interface on which to browse.  Pass 0 to mean all interfaces.
+<P>
+<CODE>type</CODE>: The name of the type of the service, for example "_http._tcp.".  UTF-8 encoded.  See <A HREF="http://zeroconf.org" TARGET="_top">zeroconf.org</A> and <A HREF="http://www.ietf.org/rfc/rfc2782.txt" TARGET="_top">RFC2782</A> for details on the format of service type names.  A NULL value is not allowed.
+<P>
+<CODE>domain</CODE>: The domain that the service must be available from. UTF-8 encoded.  Pass a NULL to allow services from any domain.
+<P>
+<CODE>reply</CODE>: A pointer to the reply function.
+<P>
+<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+<P>
+<p><code>oid</code>: Identifies the specific call, enabling other functions, like the reply function, to refer to the correct call. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>
+sw_discovery_oid oid;
+
+if ((result = sw_discovery_browse(
+   session,
+   0,
+   "_ftp._tcp.",
+   NULL,
+   my_browse_reply,
+   NULL,
+   &amp;oid)) != SW_OKAY)
+{
+   fprintf(stderr, "sw_discovery_browse failed: %d\n", result);
+   return -1;
+}
+
+sw_discovery_run(session);
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_cancel"><CODE>sw_discovery_cancel</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_resolve"><H3>FUNCTION</H3></A><H2>sw_discovery_resolve</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_resolve</CODE>(
+   sw_discovery                  session,
+   sw_uint32                     interface_index,
+   sw_const_string               name,
+   sw_const_string               type,
+   sw_const_string               domain,
+   <A HREF="#sw_discovery_resolve_reply"><CODE>sw_discovery_resolve_reply</CODE></A>    reply,
+   sw_opaque                     extra,
+   sw_discovery_oid            * oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Causes Howl to notify your program of the port number and IP address of a specified service, as established at the time of the call to <CODE>sw_discovery_resolve</CODE> and each time the port number or IP address changes.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<CODE>interface_index</CODE>: The interface on which to resolve.  Pass 0 for all interfaces.
+<P>
+<CODE>name</CODE>: The name of the service to resolve.  UTF-8 encoded.
+<P>
+<CODE>type</CODE>: The name of the type of the service, for example "_http._tcp.".  UTF-8 encoded.  See <A HREF="http://zeroconf.org" TARGET="_top">zeroconf.org</A> and <A HREF="http://www.ietf.org/rfc/rfc2782.txt" TARGET="_top">RFC2782</A> for details on the format of service type names.  A NULL value is not allowed.
+<P>
+<CODE>domain</CODE>: The domain that the service must be available from. UTF-8 encoded.  Pass a NULL to allow services from any domain.
+<P>
+<CODE>reply</CODE>: A pointer to the reply function.
+<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+<p><code>oid</code>: Identifies the specific call, enabling other functions, like the reply function, to refer to the correct call. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+<P>
+<H3>EXAMPLE</H3>Inside a reply function for <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>:
+<P>
+<PRE><CODE>   .
+   .
+   .
+   sw_result        err;
+   sw_discovery_oid oid;
+
+   switch (status)
+   {
+      .
+      .
+      .
+      case SW_DISCOVERY_BROWSE_ADD_SERVICE:
+      {
+         result = sw_discovery_resolve(
+            session,
+            0,
+            name,
+            type,
+            domain,
+            my_resolver,
+            NULL,
+            &amp;oid);
+      }
+      break;
+      .
+      .
+      .
+   }</CODE>
+</PRE>
+Note that there is no call to <A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE></A>, because <CODE>sw_discovery_resolve</CODE> was called inside a reply function.  Control of the CPU will return to Howl when the reply function returns.
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_cancel"><CODE>sw_discovery_cancel</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_query_record"><H3>FUNCTION</H3></A><H2>sw_discovery_query_record</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_query_record</CODE>(
+   sw_discovery                       session,
+   sw_uint32                          interface_index,
+   sw_uint32                          flags,
+   sw_const_string                    fullname,
+   sw_uint16                          rrtype,
+   sw_uint16                          rrclass,
+   <A HREF="#sw_discovery_query_record_reply"><CODE>sw_discovery_query_record_reply</CODE></A>    reply,
+   sw_opaque                          extra,
+   sw_discovery_oid                 * oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Queries an arbitrary mDNS record.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<CODE>interface_index</CODE>: The interface on which to query.  Pass 0 for all interfaces.
+<P>
+<CODE>fullname</CODE>: The fullname of the service to resolve.  UTF-8 encoded.
+<P>
+<CODE>rrtype</CODE>: The resource record type of the record to query.
+<P>
+<CODE>rrclass</CODE>: The resource record class of the record to query.
+<P>
+<CODE>reply</CODE>: A pointer to the reply function.
+<p><code>extra</code>: An arbitrary pointer, which Howl passes to the reply function. Howl never uses or dereferences this pointer.</p>
+<p><code>oid</code>: Identifies the specific call, enabling other functions, like the reply function, to refer to the correct call. <code>oid</code> is allocated by the user and filled in by Howl.</p>
+<P>
+<H3>EXAMPLE</H3>
+<PRE><CODE>
+   .
+   .
+   sw_result        err;
+   sw_discovery_oid oid;
+
+   result = sw_discovery_resolve(
+               session,
+               0,
+               "blob.local.",
+               1,
+               1,
+               my_query,
+               NULL,
+               &amp;oid);
+   .
+   .
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_cancel"><CODE>sw_discovery_cancel</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_cancel"><H3>FUNCTION</H3></A><H2>sw_discovery_cancel</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_cancel</CODE>(
+   sw_discovery     session,
+   sw_discovery_oid oid)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Stops calls to discovery functions.</A>.
+<P>
+<CODE>session</CODE>: The discovery session.
+<P>
+<p><code>oid</code>: Identifies the specific call.</p>
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>
+if (sw_discovery_cancel(session, oid) != SW_OKAY)
+{
+   fprintf(stderr, "cancel failed\n");
+   return -1;
+}
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_run"><CODE>sw_discovery_run</CODE>
+</A>
+<P>
+<HR><A NAME="sw_discovery_run"><H3>FUNCTION</H3></A><H2>sw_discovery_run</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_run</CODE>(sw_discovery session)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Yields control of the CPU to Howl.  Does not return.
+<P>
+Once your program has called <CODE>sw_discovery_run</CODE>, Howl calls reply functions.  Before you've called <CODE>sw_discovery_run</CODE>, Howl does not control the CPU and thus cannot call reply functions in response to asynchronous events like new discovery services appearing.
+<P>
+<H3>EXAMPLE</H3><PRE><CODE>int set_up_discovery_replies(void)
+{
+   sw_discovery session;
+   if (sw_discovery_init(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+   .
+   .  // set up reply functions here
+   .
+   sw_discovery_run(session);
+}
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_stop_run"><CODE>sw_discovery_stop_run</CODE>
+</A>
+<P>
+<HR><A NAME="sw_discovery_socket"><H3>FUNCTION</H3></A><H2>sw_discovery_socket</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>int</CODE></A>
+<CODE>sw_discovery_socket</CODE>(sw_discovery session)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>
+		Returns the underlying socket that Howl uses to communicate with the mDNSResponder daemon.  On Mac OS X, there is no socket, so the return value is undefined.
+		<P>
+		<H3>EXAMPLE</H3><PRE><CODE>int set_up_discovery(void)
+{
+   sw_discovery session;
+   int socket;
+   if (sw_discovery_init(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+   .
+   .  // set up event handling
+   .
+   socket = sw_discovery_socket(session);
+}
+</CODE>
+</PRE>
+<P>
+<HR><A NAME="sw_discovery_read_socket"><H3>FUNCTION</H3></A><H2>sw_discovery_read_socket</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_read_socket</CODE>(sw_discovery session)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Reads data sent to Howl from mDNSResponder.<P>This call is non-blocking.  It will potentially invoke any callbacks that have been registered with the discovery session.<P>
+<H3>EXAMPLE</H3><PRE><CODE>int set_up_discovery(void)
+{
+   sw_discovery session;
+   if (sw_discovery_init(&amp;session) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+   .
+   .  // set up event handling
+   .
+   sw_discovery_read_socket(session);
+}
+</CODE>
+</PRE>
+		<hr>
+		<h3><a name="sw_discovery_publish_reply">CALLBACK</a></h3>
+		<H2>sw_discovery_publish_reply</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef <A HREF="#sw_result"><CODE>sw_result</CODE></A>
+(*<CODE>sw_discovery_publish_reply</CODE>)(
+   sw_discovery                  discovery,
+   sw_discovery_oid              oid,
+   <A HREF="#sw_discovery_publish_status"><CODE>sw_discovery_publish_status</CODE></A>   status,
+   sw_opaque                     extra);
+</CODE></PRE>
+<H3>DESCRIPTION</H3><CODE>sw_discovery_publish_reply</CODE> is the signature of the function called by the Howl system service to indicate the results of an attempt to publish.  Howl is told to call this function through a call to <A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>.
+<P>
+<CODE>handler</CODE>: The arbitrary pointer that was passed to <A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>.
+<P>
+<CODE>discovery</CODE>: The discovery session.
+<P>
+<CODE>status</CODE>: The result of the attempt to publish.
+<P>
+<CODE>oid</CODE>: The oid generated by <A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>, identifying the attempt to publish.
+<P>
+<CODE>extra</CODE>: The arbitrary pointer that was passed to <A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>.
+<P>
+<H3>RETURN VALUE</H3><CODE>sw_discovery_publish_reply</CODE> should return the value SW_OKAY.  The return value is included to allow future versions to return different values without breaking compatibility with old code.
+<P>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_publish"><CODE>sw_discovery_publish</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_browse_reply"><H3>CALLBACK</H3></A><H2>sw_discovery_browse_reply</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef <A HREF="#sw_result"><CODE>sw_result</CODE></A>
+(*<CODE>sw_discovery_browse_reply</CODE>)(
+   sw_discovery                discovery,
+   sw_discovery_oid            oid,
+   <A HREF="#sw_discovery_browse_status"><CODE>sw_discovery_browse_status</CODE></A>  status,
+   sw_uint32                   interface_index,
+   sw_const_string             name,
+   sw_const_string             type,
+   sw_const_string             domain,
+   sw_opaque                   extra);
+</CODE></PRE>
+<H3>DESCRIPTION</H3><CODE>sw_discovery_browse_reply</CODE> is the signature of the function called by the Howl system service to indicate that a discovery domain or service has become available, is no longer available, or to communicate other status information.  Howl is told to call this function through a call to <A HREF="#sw_discovery_browse_domains"><CODE>sw_discovery_browse_domains</CODE></A> or <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>.
+<P>
+When a <CODE>sw_discovery_browse_reply</CODE> function is called to report on a service, the <CODE>name</CODE>, <CODE>type</CODE>, and <CODE>domain</CODE> uniquely identify the service.
+<P>
+<CODE>discovery</CODE>: The discovery session.
+<P>
+<CODE>oid</CODE>: The oid generated by <A HREF="#sw_discovery_browse_domains"><CODE>sw_discovery_browse_domains</CODE></A> or <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>, identifying the request to browse.
+<P>
+<CODE>status</CODE>: Info about a domain or service, or status info about the request to browse.
+<P>
+<CODE>interface_index</CODE>: The interface index upon which the browse took place.
+<P>
+<CODE>name</CODE>: The name of the service being reported on by the Howl system service.  Undefined for inappropriate values of <CODE>status</CODE>.  UTF-8 encoded.
+<P>
+<CODE>type</CODE>: The type of the service being reported on by the Howl system service.  UTF-8 encoded.  Undefined for inappropriate values of <CODE>status</CODE>.
+<P>
+<CODE>domain</CODE>: The domain being reported on by the Howl system service.  UTF-8 encoded.  Undefined for inappropriate values of <CODE>status</CODE>.
+<P>
+<CODE>extra</CODE>: The arbitrary pointer that was passed to <A HREF="#sw_discovery_browse_domains"><CODE>sw_discovery_browse_domains</CODE></A> or <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>.
+<P>
+<H3>RETURN VALUE</H3><CODE>sw_discovery_browse_reply</CODE> should return the value SW_OKAY.  The return value is included to allow future versions to return different values without breaking compatibility with old code.
+<P>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_browse_domains"><CODE>sw_discovery_browse_domains</CODE></A>, <A HREF="#sw_discovery_browse"><CODE>sw_discovery_browse</CODE></A>
+<P>
+<HR><A NAME="sw_discovery_resolve_reply"><H3>CALLBACK</H3></A><H2>sw_discovery_resolve_reply</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef <A HREF="#sw_result"><CODE>sw_result</CODE></A>
+(*<CODE>sw_discovery_resolve_reply</CODE>)(
+   sw_discovery                  discovery,
+   sw_discovery_oid              oid,
+   sw_uint32                     interface_index,
+   sw_const_string               name,
+   sw_const_string               type,
+   sw_const_string               domain,
+   sw_ipv4_address               address,
+   sw_port                       port,
+   sw_octets                     text_record,
+   sw_ulong                      text_record_len,
+   sw_opaque                     extra);
+</CODE></PRE>
+<H3>DESCRIPTION</H3><CODE>sw_discovery_resolve_reply</CODE> is the signature of the function called by the Howl system service to communicate the port number and IP address of the socket providing a service.  Howl is told to call this function through a call to <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>.
+<P>
+<CODE>discovery</CODE>: The discovery session.
+<P>
+<CODE>oid</CODE>: The oid generated by <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>, identifying the request to browse.
+<P>
+<CODE>interface_index</CODE>: The interface on which the resolve took place.
+<P>
+<CODE>name</CODE>: The name of the service being reported on by the Howl system service.  UTF-8 encoded.
+<P>
+<CODE>type</CODE>: The type of the service being reported on by the Howl system service.  UTF-8 encoded.
+<P>
+<CODE>domain</CODE>: The domain being reported on by the Howl system service.  UTF-8 encoded.
+<P>
+<CODE>address</CODE>: The IP address of the service.
+<P>
+<CODE>port</CODE>: The port number of the socket where the service is available.
+<p><CODE>text_record</CODE>: A pointer to the raw text record.  See <a href="txt_rec_iter.html">sw_text_record_iterator</a> for more information on how to parse this data.</p>
+<p><CODE>text_record_len</CODE>: The length of the text record.  See <a href="txt_rec_iter.html">sw_text_record_iterator</a> for more information on how to parse this data.</p>
+<P>
+<CODE>extra</CODE>: The arbitrary pointer that was passed to <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>.
+<P>
+<H3>RETURN VALUE</H3><CODE>sw_discovery_resolve_reply</CODE> should return the value SW_OKAY.  The return value is included to allow future versions to return different values without breaking compatibility with old code.
+<P>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>, sw_ipv4_address
+<P>
+<HR><A NAME="sw_discovery_query_record_reply"><H3>CALLBACK</H3></A><H2>sw_discovery_query_record_reply</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef <A HREF="#sw_result"><CODE>sw_result</CODE></A>
+(*<CODE>sw_discovery_query_record_reply</CODE>)(
+   sw_discovery                       discovery,
+   sw_discovery_oid                   oid,
+   sw_discovery_query_record_status   status,
+   sw_uint32                          interface_index,
+   sw_const_string                    fullname,
+   sw_uint16                          rrtype,
+   sw_uint16                          rrclass,
+   sw_uint16                          rrdatalen,
+   sw_const_octets                    rrdata,
+   sw_uint32                          ttl,
+   sw_opaque                          extra);
+</CODE></PRE>
+<H3>DESCRIPTION</H3><CODE>sw_discovery_resolve_reply</CODE> is the signature of the function called by the Howl system service to communicate the port number and IP address of the socket providing a service.  Howl is told to call this function through a call to <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>.
+<P>
+<CODE>discovery</CODE>: The discovery session.
+<P>
+<CODE>oid</CODE>: The oid generated by <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>, identifying the request to browse.
+<P>
+<CODE>interface_index</CODE>: The interface on which the query took place.
+<P>
+<CODE>fullname</CODE>: The fullname of the element being queried.
+<P>
+<CODE>rrtype</CODE>: The type of the resource record being queried.
+<P>
+<CODE>rrclass</CODE>: The class of the resource record being queried.
+<P>
+<CODE>rrdatalen</CODE>: The length of the resource record data
+<P>
+<CODE>rrdata</CODE>: The data associated with the query
+<P>
+<CODE>ttl</CODE>: The ttl associated with this resource record 
+<P>
+<CODE>extra</CODE>: The arbitrary pointer that was passed to <A HREF="#sw_discovery_resolve"><CODE>sw_discovery_resolve</CODE></A>.
+<P>
+<H3>RETURN VALUE</H3><CODE>sw_discovery_query_record_reply</CODE> should return the value SW_OKAY.  The return value is included to allow future versions to return different values without breaking compatibility with old code.
+<P>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_query_record"><CODE>sw_discovery_query_record</CODE></A></H3>
+<P>
+		<hr>
+		<a name="sw_discovery_init_flags">
+			<h3>ENUM</h3>
+		</a>
+		<h2>sw_discovery_init_flags</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code>typedef enum _sw_discovery_init_flags</code>
+{
+   SW_DISCOVERY_USE_SHARED_SERVICE,
+   SW_DISCOVERY_USE_PRIVATE_SERVICE,
+   SW_DISCOVERY_SKIP_VERSION_CHECK
+} <code>sw_discovery_init_flags</code>;
+</code></pre>
+		<h3>DESCRIPTION</h3>Status codes that can be passed to a <a href="#sw_discovery_init_with_flags"><code>sw_discovery_init_with_flags</code></a> function.
+		<p><code>SW_DISCOVERY_USE_SHARED_SERVICE:</code> attempt to find an external mDNSResponder service</p>
+		<p><code>SW_DISCOVERY_USE_PRIVATE_SERVICE</code>: attempt to start mDNSResponder in a thread in the calling application.</p>
+		<p><code>SW_DISCOVERY_SKIP_VERSION_CHECK</code>: do not attempt to verify that the client is the proper version with respect to the mDNSResponder service.</p>
+		<p>Future versions of Howl may add more values.</p>
+		<p></p>
+		<h3>SEE ALSO</h3>
+		<A HREF="#sw_discovery_init_with_flags"><CODE>sw_discovery_init_with_flags</CODE></A><A HREF="#sw_discovery_init_with_flags"></A><p></p>
+		<HR>
+		<H3><a name="sw_discovery_publish_status">ENUM</a></H3>
+		<H2>sw_discovery_publish_status</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef enum <CODE>sw_discovery_publish_status</CODE>
+{
+   SW_DISCOVERY_PUBLISH_STARTED,
+   SW_DISCOVERY_PUBLISH_STOPPED,
+   SW_DISCOVERY_PUBLISH_NAME_COLLISION,
+   SW_DISCOVERY_PUBLISH_INVALID
+} <CODE>sw_discovery_publish_status</CODE>;
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Status codes that can be sent to a <A HREF="#sw_discovery_publish_reply"><CODE>sw_discovery_publish_reply</CODE></A> function.
+<P>
+<CODE>SW_DISCOVERY_PUBLISH_STARTED</CODE>: publishing of the specified service has started successfully.
+<P>
+<CODE>SW_DISCOVERY_PUBLISH_STOPPED</CODE>: the specified service is now no longer published.
+<P>
+<CODE>SW_DISCOVERY_PUBLISH_NAME_COLLISION</CODE>: the specified service could not be published because it has the same name as another service already on the discovery network.
+<P>
+<CODE>SW_DISCOVERY_PUBLISH_INVALID</CODE>: a general catch-all error code.
+<P>
+Future versions of Howl may add more values.
+<P>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_discovery_publish_reply"><CODE>sw_discovery_publish_reply</CODE></A>
+		<P>
+		<HR><A NAME="sw_discovery_browse_status"><H3>ENUM</H3></A><H2>sw_discovery_browse_status</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef enum <CODE>sw_discovery_browse_status</CODE>
+{
+   SW_DISCOVERY_BROWSE_INVALID,
+   SW_DISCOVERY_BROWSE_RELEASE,
+   SW_DISCOVERY_BROWSE_ADD_DOMAIN,
+   SW_DISCOVERY_BROWSE_ADD_DEFAULT_DOMAIN,
+   SW_DISCOVERY_BROWSE_REMOVE_DOMAIN,
+   SW_DISCOVERY_BROWSE_ADD_SERVICE,
+   SW_DISCOVERY_BROWSE_REMOVE_SERVICE
+} <CODE>sw_discovery_browse_status</CODE>;
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Status codes that can be sent to a <A HREF="#sw_discovery_browse_reply"><CODE>sw_discovery_browse_reply</CODE></A> function.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_INVALID</CODE>: a general catch-all error code.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_ADD_DOMAIN</CODE>: the specified domain is now accessible on the discovery network.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_ADD_DEFAULT_DOMAIN</CODE>: the default discovery domain, "local.", has been established.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_REMOVE_DOMAIN</CODE>: the specified domain has been removed from the discovery network.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_ADD_SERVICE</CODE>: the specified service is now available on the discovery network.
+<P>
+<CODE>SW_DISCOVERY_BROWSE_REMOVE_SERVICE</CODE>: the specified service has been removed from the discovery network.
+<P>
+Future versions of Howl may add more values.
+<P>
+<H3>SEE ALSO</H3><A HREF="#sw_discovery_publish_reply"><CODE>sw_discovery_publish_reply</CODE></A>
+<P>
+<HR><A NAME="sw_result"><H3>DATA TYPE</H3></A><H2>sw_result</H2><H3>SYNOPSIS</H3><PRE><CODE>typedef sw_long <CODE>sw_result</CODE>;
+</CODE></PRE>
+<H3>DESCRIPTION</H3>The return code of a call to any Howl subroutine.
+<P>
+Possible values:
+<P>
+<CODE>SW_OKAY</CODE>: the call succeeded.
+<P>
+<CODE>SW_DISCOVERY_E_NO_MEM</CODE>: failed: out of memory.
+<P>
+<CODE>SW_DISCOVERY_E_BAD_PARAM</CODE>: the function was passed an invalid argument, like attempting to publish a service with an invalid name.
+<P>
+<CODE>SW_DISCOVERY_E_UNKNOWN</CODE>: a general catchall error code.
+<P>
+Future versions of Howl may add more values.
+<P>
+</BODY>
+</HTML>
+

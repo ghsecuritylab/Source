@@ -1,0 +1,214 @@
+#
+# Router rc control scripts Makefile
+#
+# Copyright 2013, ASUSTek Inc.
+# All Rights Reserved.
+# 
+# THIS SOFTWARE IS OFFERED "AS IS", AND BROADCOM GRANTS NO WARRANTIES OF ANY
+# KIND, EXPRESS OR IMPLIED, BY STATUTE, COMMUNICATION OR OTHERWISE. BROADCOM
+# SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A SPECIFIC PURPOSE OR NONINFRINGEMENT CONCERNING THIS SOFTWARE.
+#
+
+USERDIR = $(ROOTDIR)/user
+INSTALLDIR = $(ROOTDIR)/romfs
+
+CFLAGS += -s \
+	-DASUS_NVRAM \
+	-DWPS_SUPPORT \
+	-DWEB_REDIRECT \
+	-DWEBSTRFILTER \
+	-DASUS_ATE \
+	-DRA_SINGLE_SKU \
+	-DROAMING_SUPPORT \
+	-DLED_DRV_SUPPORT
+
+# SquashFS
+include $(ROOTDIR)/$(LINUXDIR)/.config
+ifeq ($(filter y, $(CONFIG_RT2880_ROOTFS_IN_FLASH)),y)
+	CFLAGS += -DUSE_SQUASHFS
+endif
+
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_EAN66)),y)
+CFLAGS += -DSWMODE_ADAPTER_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DEXTERNAL_PHY_SUPPORT \
+	-DEEPROM_BACKWARD_COMPATIBILITY \
+	-DDUAL_BAND_NONCONCURRENT \
+	-DLED_BRIGHTNESS_SUPPORT \
+	-DWPA_SUPPLICANT_SUPPORT \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DIEEE802_11H
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN12)),y)
+CFLAGS += -DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DCE_ADAPTIVITY
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN14)),y)
+CFLAGS += -DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DTOUCH_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DAUDIO_SUPPORT \
+	-DINTERNET_RADIO \
+	-DCE_ADAPTIVITY
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN53)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DTOUCH_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DAUDIO_SUPPORT \
+	-DINTERNET_RADIO \
+	-DIEEE802_11H \
+	-DCE_ADAPTIVITY \
+	-DDUAL_BAND_AUTOSELECT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPAC52)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DREPEATER_5G_WORKAROUND \
+	-DWPS_BTN_SUPPORT \
+	-DTOUCH_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DAUDIO_SUPPORT \
+	-DINTERNET_RADIO \
+	-DIEEE802_11AC \
+	-DIEEE802_11H \
+	-DCE_ADAPTIVITY \
+	-DDUAL_BAND_AUTOSELECT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPAC56)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DIEEE802_11AC \
+	-DIEEE802_11H \
+	-DCE_ADAPTIVITY
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_WMPN12)),y)
+CFLAGS += -DSWMODE_REPEATER_V2_SUPPORT \
+	-DWPS_BTN_SUPPORT \
+	-DVOL_KNOB_SUPPORT \
+	-DUSB_TO_CM6510 \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DAUDIO_SUPPORT \
+	-DINTERNET_RADIO
+else
+CFLAGS += -DSWMODE_ADAPTER_SUPPORT \
+	-DSWMODE_HOTSPOT_SUPPORT \
+	-DSWMODE_REPEATER_V2_SUPPORT \
+	-DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DSWMODE_REPEATER_MEDIABRIDGE_SUPPORT \
+	-DREPEATER_5G_WORKAROUND \
+	-DWPS_BTN_SUPPORT \
+	-DEXTERNAL_PHY_SUPPORT \
+	-DEEPROM_BACKWARD_COMPATIBILITY \
+	-DDUAL_BAND_NONCONCURRENT \
+	-DLED_BRIGHTNESS_SUPPORT \
+	-DTOUCH_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DVOL_KNOB_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DUSB_TO_CM6510 \
+	-DUSB_SUPPORT \
+	-DASUS_DDNS \
+	-DWPA_SUPPLICANT_SUPPORT \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DAUDIO_SUPPORT \
+	-DINTERNET_RADIO \
+	-DIEEE802_11AC \
+	-DIEEE802_11H \
+	-DCE_ADAPTIVITY \
+	-DVLAN
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+
+CFLAGS += -I. \
+	-I$(ROOTDIR)/$(LINUXDIR)/include \
+	-I$(ROOTDIR)/$(LINUXDIR)/drivers/flash \
+	-I$(ROOTDIR)/$(LINUXDIR)/drivers/char \
+	-I$(ROOTDIR)/$(LINUXDIR)/drivers/net/raeth \
+	-I$(USERDIR)/shared \
+	-I$(USERDIR)/shared/include \
+	-I$(USERDIR)/shared/chipdeps \
+	-I$(USERDIR)/wireless_tools
+
+LDFLAGS = -L. \
+	-L$(USERDIR)/shared -lshared \
+	-lm \
+	-lpthread
+
+EXEC = rc
+
+OBJS = $(EXEC).o \
+	init.o \
+	services.o \
+	firewall.o \
+	common.o \
+	network.o \
+	ppp.o \
+	ntp.o \
+	udhcpc.o \
+	ralink.o \
+	monitor.o \
+	watchdog.o \
+	wanduck.o \
+	detectWAN_arp.o \
+	wpa_supplicant.o \
+	ate.o
+
+all: $(OBJS)
+	$(CC) -o $(EXEC) $(OBJS) $(LDFLAGS)
+	$(STRIP) $(EXEC)
+
+c.o:
+	$(CC) -c $*.c $(CFLAGS)
+
+clean:
+	rm -f *.o $(EXEC) .sgbuilt_user
+
+romfs: all
+	cp -f $(EXEC) $(INSTALLDIR)/sbin/
+	cd $(INSTALLDIR) && rm -f init && ln -sf sbin/$(EXEC) init
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) init
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) nvram_oob
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) watchdog
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wanduck
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) ddns_updated
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) ntp
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) ip-up
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) ip-down
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wan-up
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wan-down
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) gen_ralink_config
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wps_start
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wps_oob
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) wps_stop
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) apcli_monitor
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) detectWAN_arp
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) restart_dns
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) restart_dhcpd
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) link_down
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) link_up
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) link_status
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) start_telnetd
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) run_telnetd
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) track_set
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) logmessage
+	cd $(INSTALLDIR)/sbin && ln -sf $(EXEC) ATE

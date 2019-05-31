@@ -1,0 +1,1018 @@
+libgstgsettingselements_la-gstgsettingsaudiosink.lo \
+  .libs/libgstgsettingselements_la-gstgsettingsaudiosink.o:  \
+ gstgsettingsaudiosink.c ../../config.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gst.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glib.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/galloca.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glibconfig.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmacros.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gversionmacros.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/garray.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gasyncqueue.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gthread.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gatomic.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gerror.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gquark.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbacktrace.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbase64.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbitlock.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbookmarkfile.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbytes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gcharset.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gchecksum.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gconvert.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdataset.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdate.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdatetime.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtimezone.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdir.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/genviron.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gfileutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ggettext.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghash.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/glist.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmem.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gnode.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghmac.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gchecksum.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghook.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghostutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/giochannel.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmain.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gpoll.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gslist.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstring.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gunicode.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gkeyfile.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmappedfile.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmarkup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmessages.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/goption.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gpattern.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gprimes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gqsort.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gqueue.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/grand.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gregex.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gscanner.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gsequence.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gshell.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gslice.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gspawn.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstrfuncs.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstringchunk.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtestutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gthreadpool.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtimer.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtrashstack.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtree.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gurifuncs.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gvarianttype.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gvariant.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gversion.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gallocator.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gcache.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gcompletion.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gmain.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/grel.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gthread.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/pthread.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sched.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/initspin.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/glib-compat.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstenumtypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glib-object.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gbinding.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gobject.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtype.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvalue.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gparam.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gclosure.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gsignal.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gmarshal.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gboxed.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/glib-types.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/genums.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gparamspecs.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gsourceclosure.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtypemodule.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtypeplugin.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvaluearray.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvaluetypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstversion.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstatomicqueue.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbin.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstelement.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstconfig.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstobject.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpad.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbuffer.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstminiobject.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstclock.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstcaps.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gststructure.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstdatetime.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbufferlist.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstevent.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstformat.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstiterator.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttaglist.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstquery.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttask.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttaskpool.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpadtemplate.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbus.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmessage.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstelementfactory.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstplugin.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/stat.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stat.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/gmodule.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmacros.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpluginfeature.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstindex.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstindexfactory.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstchildproxy.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstdebugutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsterror.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/errno.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno_values.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstghostpad.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstinfo.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstinterface.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmarshal.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstparamspecs.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstvalue.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpipeline.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpoll.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpreset.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstregistry.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstsegment.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstsystemclock.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttagsetter.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttrace.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttypefind.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttypefindfactory.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsturi.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstparse.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstxml.h \
+  /source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstcompat.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h \
+  gstgsettingsaudiosink.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gio.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giotypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioenums.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gaction.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroupexporter.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactionmap.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gappinfo.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gapplication.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gapplicationcommandline.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gasyncinitable.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginitable.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gasyncresult.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gbufferedinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilterinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gbufferedoutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilteroutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/goutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcancellable.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcharsetconverter.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverter.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcontenttype.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverterinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverteroutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcredentials.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/unistd.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix_opt.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/confname.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/getopt.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdatainputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdataoutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusauthobserver.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbuserror.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusintrospection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmessage.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmethodinvocation.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusnameowning.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusnamewatching.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusproxy.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusserver.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdrive.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gemblemedicon.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gicon.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gemblem.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileattribute.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileenumerator.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfile.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileicon.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileinfo.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileiostream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giostream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioerror.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilemonitor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilenamecompleter.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileoutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetaddressmask.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetsocketaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioenumtypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giomodule.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioscheduler.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gloadableicon.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmemoryinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmemoryoutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmount.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmountoperation.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnativevolumemonitor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvolumemonitor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkmonitor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkservice.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpermission.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableinputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableoutputstream.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableutils.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxy.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyaddress.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyaddressenumerator.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketaddressenumerator.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyresolver.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gresolver.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gresource.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gseekable.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsettingsschema.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsettings.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleaction.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleactiongroup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactionmap.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleasyncresult.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimplepermission.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketclient.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketconnectable.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocket.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketcontrolmessage.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketlistener.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketservice.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsrvtarget.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtask.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtcpconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtcpwrapperconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtestdbus.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gthemedicon.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gthreadedsocketservice.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsbackend.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlscertificate.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsclientconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsdatabase.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsfiledatabase.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsinteraction.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsserverconnection.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlspassword.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvfs.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvolume.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gzlibcompressor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gzlibdecompressor.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusinterface.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusinterfaceskeleton.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobject.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectskeleton.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectproxy.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanager.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanagerclient.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanagerserver.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusactiongroup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giotypes.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gremoteactiongroup.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenumodel.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenu.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenuexporter.h \
+  /source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmenumodel.h \
+  gstswitchsink.h gstgsettings.h
+
+../../config.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gst.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glib.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/galloca.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glibconfig.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmacros.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gversionmacros.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/garray.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gasyncqueue.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gthread.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gatomic.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gerror.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gquark.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbacktrace.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbase64.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbitlock.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbookmarkfile.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gbytes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gcharset.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gchecksum.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gconvert.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdataset.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdate.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdatetime.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtimezone.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gdir.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/genviron.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gfileutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ggettext.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghash.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/glist.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmem.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gnode.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghmac.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gchecksum.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghook.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/ghostutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/giochannel.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmain.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gpoll.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gslist.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstring.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gunicode.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gkeyfile.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmappedfile.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmarkup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gmessages.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/goption.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gpattern.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gprimes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gqsort.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gqueue.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/grand.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gregex.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gscanner.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gsequence.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gshell.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gslice.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gspawn.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstrfuncs.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gstringchunk.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtestutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gthreadpool.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtimer.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtrashstack.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gtree.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gurifuncs.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gvarianttype.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gvariant.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/gversion.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gallocator.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gcache.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gcompletion.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gmain.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/grel.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/glib/deprecated/gthread.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/pthread.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sched.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/initspin.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/glib-compat.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstenumtypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/glib-object.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gbinding.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gobject.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtype.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvalue.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gparam.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gclosure.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gsignal.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gmarshal.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gboxed.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/glib-types.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/genums.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gparamspecs.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gsourceclosure.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtypemodule.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gtypeplugin.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvaluearray.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gobject/gvaluetypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstversion.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstatomicqueue.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbin.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstelement.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstconfig.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstobject.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpad.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbuffer.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstminiobject.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstclock.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstcaps.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gststructure.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstdatetime.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbufferlist.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstevent.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstformat.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstiterator.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttaglist.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstquery.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttask.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttaskpool.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpadtemplate.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstbus.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmessage.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstelementfactory.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstplugin.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/stat.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stat.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/include/gmodule.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmacros.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpluginfeature.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstindex.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstindexfactory.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstchildproxy.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstdebugutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsterror.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/errno.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno_values.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstghostpad.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstinfo.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstinterface.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstmarshal.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstparamspecs.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstvalue.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpipeline.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpoll.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstpreset.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstregistry.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstsegment.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstsystemclock.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttagsetter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttrace.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttypefind.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsttypefindfactory.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gsturi.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstparse.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstxml.h:
+
+/source/Release/RP-N53_GST/GPL/lib/gst-plugins-bad-0.10.23/../gstreamer-0.10.36/gst/gstcompat.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h:
+
+gstgsettingsaudiosink.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gio.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giotypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioenums.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gaction.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroupexporter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactionmap.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gappinfo.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gapplication.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gapplicationcommandline.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gasyncinitable.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginitable.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gasyncresult.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gbufferedinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilterinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gbufferedoutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilteroutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/goutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcancellable.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcharsetconverter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcontenttype.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverterinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gconverteroutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gcredentials.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/unistd.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix_opt.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/confname.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/getopt.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdatainputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdataoutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusauthobserver.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbuserror.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusintrospection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmessage.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmethodinvocation.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusnameowning.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusnamewatching.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusproxy.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusserver.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdrive.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gemblemedicon.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gicon.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gemblem.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileattribute.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileenumerator.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfile.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileicon.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileinfo.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileiostream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giostream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioerror.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilemonitor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfilenamecompleter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gfileoutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetaddressmask.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/ginetsocketaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioenumtypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giomodule.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gioscheduler.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gloadableicon.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmemoryinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmemoryoutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmount.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmountoperation.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnativevolumemonitor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvolumemonitor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkmonitor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gnetworkservice.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpermission.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableinputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableoutputstream.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gpollableutils.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxy.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyaddress.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyaddressenumerator.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketaddressenumerator.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gproxyresolver.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gresolver.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gresource.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gseekable.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsettingsschema.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsettings.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleaction.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleactiongroup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactiongroup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gactionmap.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimpleasyncresult.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsimplepermission.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketclient.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketconnectable.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocket.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketcontrolmessage.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketlistener.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsocketservice.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gsrvtarget.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtask.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtcpconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtcpwrapperconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtestdbus.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gthemedicon.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gthreadedsocketservice.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsbackend.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlscertificate.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsclientconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsdatabase.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsfiledatabase.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsinteraction.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlsserverconnection.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gtlspassword.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvfs.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gvolume.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gzlibcompressor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gzlibdecompressor.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusinterface.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusinterfaceskeleton.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobject.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectskeleton.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectproxy.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanager.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanagerclient.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusobjectmanagerserver.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusactiongroup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/giotypes.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gremoteactiongroup.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenumodel.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenu.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gmenuexporter.h:
+
+/source/Release/RP-N53_GST/GPL/lib/glib-2.35.1/gio/gdbusmenumodel.h:
+
+gstswitchsink.h:
+
+gstgsettings.h:

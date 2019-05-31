@@ -1,0 +1,1 @@
+ajack= <% detect_audiojack(); %>;

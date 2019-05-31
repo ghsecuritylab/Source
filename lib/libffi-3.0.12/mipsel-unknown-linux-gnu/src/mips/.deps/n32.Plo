@@ -1,0 +1,11 @@
+src/mips/n32.lo src/mips/n32.o: ../src/mips/n32.S ./fficonfig.h \
+  include/ffi.h include/ffitarget.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sgidefs.h
+
+./fficonfig.h:
+
+include/ffi.h:
+
+include/ffitarget.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sgidefs.h:

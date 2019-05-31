@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--[if !(IE 7)]><!--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><!--<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" type="text/css" href="/form_style.css">
+<link rel="stylesheet" type="text/css" href="/qis/qis_style.css">
+<script type="text/javascript" src="/state.js"></script>
+<script type="text/JavaScript" src="/jquery.js"></script>
+<script type="text/javascript" src="/alttxt.js"></script>
+<script type="text/javascript" src="/help.js"></script>
+<script type="text/javascript" src="/qis/QIS_general.js"></script>
+<script type="text/javascript">
+var getflag = '<% get_parameter("flag"); %>';
+var sw_mode = parent.document.QKform.sw_mode.value;
+var re_expressway = parent.document.QKform.re_expressway.value;
+var re_mediabridge = parent.document.QKform.re_mediabridge.value;
+
+function QKinternettype_load_body(){
+	parent.set_step("t1");
+
+	change_setting_img(sw_mode, "aplist");
+	LoadStringToArray();
+	show_hint();
+	showList();
+	sorter.sortBy('signal');
+}
+
+function en_wifipxy(){
+	if (document.form.en_wifipxy_chk.checked == true)
+		parent.document.QKform.re_wifipxy.value = 1;
+	else
+		parent.document.QKform.re_wifipxy.value = 0;
+}
+
+function show_hint(){
+	var html = "";
+	var inc_btn_width = (cur_dict == "DE" || cur_dict == "FI" || cur_dict == "FR" || cur_dict == "MS" || cur_dict == "PL" || cur_dict == "RU") ? 1 : 0;
+	if (parent.select_firstPAP == "5G") {
+		if (inc_btn_width) {
+			if (re_expressway == "0")
+				html += '<input type="button" value="<#CTL_skip#>" onclick="btnHandler.skip(0);" class="button_gen2" style="color:#FFCC00;">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen2"><input type="button" value="<#CTL_refresh#> (2.4GHz)" onclick="btnHandler.SiteSurvey();" class="button_gen2">';
+		} else {
+			if (re_expressway == "0")
+				html += '<input type="button" value="<#CTL_skip#>" onclick="btnHandler.skip(0);" class="button_gen" style="color:#FFCC00;">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen"><input type="button" value="<#CTL_refresh#> (2.4GHz)" onclick="btnHandler.SiteSurvey();" class="button_gen">';
+		}
+		if (re_expressway == "0") {
+			document.getElementById('aplist_prompt').innerHTML = "<#QIS_aplist_desc5#>";
+			document.getElementById('wifipxy_field').style.display = "none";
+		}
+	} else if (parent.select_firstPAP == "2.4G") {
+		if (inc_btn_width) {
+			if (re_expressway == "0")
+				html += '<input type="button" value="<#CTL_skip#>" onclick="btnHandler.skip(1);" class="button_gen2" style="color:#FFCC00;">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen2"><input type="button" value="<#CTL_refresh#> (5GHz)" onclick="btnHandler.SiteSurvey();" class="button_gen2">';
+		} else {
+			if (re_expressway == "0")
+				html += '<input type="button" value="<#CTL_skip#>" onclick="btnHandler.skip(1);" class="button_gen" style="color:#FFCC00;">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen"><input type="button" value="<#CTL_refresh#> (5GHz)" onclick="btnHandler.SiteSurvey();" class="button_gen">';
+		}
+		if (re_expressway == "0") {
+			document.getElementById('aplist_prompt').innerHTML = "<#QIS_aplist_desc6#>";
+			document.getElementById('wifipxy_field').style.display = "none";
+		}
+	} else {
+		if (sw_mode == 2 && wifi_proxy_support != -1) {
+			if (productid == "RP-N53")
+				document.getElementById('wifipxy_prompt').style.display = "";
+			if (parent.document.QKform.re_wifipxy.value == 1)
+				document.form.en_wifipxy_chk.checked = true;
+		}
+		if (inc_btn_width) {
+			if (qis_opmode_support != -1)
+				html += '<input type="button" value="<#CTL_mode_selection#>" onclick="btnHandler.gotoModeSelect();" class="button_gen2">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen2"><input type="button" value="<#CTL_refresh#>" onclick="btnHandler.SiteSurvey();" class="button_gen2">';
+		} else {
+			if (qis_opmode_support != -1)
+				html += '<input type="button" value="<#CTL_mode_selection#>" onclick="btnHandler.gotoModeSelect();" class="button_gen">';
+			html += '<input type="button" value="<#CTL_manual#>" onclick="btnHandler.gotoManual();" class="button_gen"><input type="button" value="<#CTL_refresh#>" onclick="btnHandler.SiteSurvey();" class="button_gen">';
+		}
+	}
+	document.getElementById('apscan_btn').innerHTML = html;
+}
+
+/* table sorting */
+function showArrow(arrow_flag){ // check mouseover which flag or which flag is selected
+	var Arrow_flag;
+	var index_flag = sorter.currentType; // check which flag is sorting now
+
+	if (sorter.currentOrder == "asc")
+		Arrow_flag =  'up';
+	else if (sorter.currentOrder == "desc")
+		Arrow_flag =  'down';
+
+	// For arrow image, "mouseover" needs to judge two conditions for display. One of two flags is selected, show "arrow".
+	// For background image, "mouseover "only judge which flag is selected now, show "background"
+
+	// As long as one of two flags is selected, show "arrow"
+	// for arrow image
+	if (index_flag == "SSID" || arrow_flag == "SSID")
+		document.getElementById('arrow_SSID').src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById('arrow_SSID').src="/images/qis/blank.png";
+
+	if (index_flag == "channel" || arrow_flag == "channel")
+		document.getElementById('arrow_channel').src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_channel").src="/images/qis/blank.png";
+
+	if (index_flag == "security" || arrow_flag == "security")
+		document.getElementById("arrow_security").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_security").src="/images/qis/blank.png";
+
+	if (index_flag == "signal" || arrow_flag == "signal")
+		document.getElementById("arrow_signal").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_signal").src="/images/qis/blank.png";
+
+	if (index_flag == "frequency" || arrow_flag == "frequency")
+		document.getElementById("arrow_frequency").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_frequency").src="/images/qis/blank.png";
+
+	// Only arrow_flag is selected, show "background"
+	// for background image
+	var background_flag = "back_" + arrow_flag;
+	document.getElementById(background_flag).style.background="url(/images/qis/table_sort_01.jpg) repeat-x";
+}
+
+function deleteArrow(arrow_flag){ // only remain selected sorting
+	var Arrow_flag;
+	var index_flag = sorter.currentType; // check what is sorting now
+
+	if (sorter.currentOrder == "asc")
+		Arrow_flag =  'up';
+	else if (sorter.currentOrder == "desc")
+		Arrow_flag =  'down';
+
+	// For arrow image, "mouseout" only judge which flag is sorting now, the flag shows "arrow", others hide "arrow".
+	// For background image, "mouseout" only judge which flag is selected now, hide "background"
+
+	// Only index_flag is selected, show "arrow"; others hide "arrow"
+	// for arrow image
+	if (index_flag == "SSID")
+		document.getElementById('arrow_SSID').src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById('arrow_SSID').src="/images/qis/blank.png";
+
+	if (index_flag == "channel")
+		document.getElementById('arrow_channel').src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_channel").src="/images/qis/blank.png";
+
+	if (index_flag == "security")
+		document.getElementById("arrow_security").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_security").src="/images/qis/blank.png";
+
+	if (index_flag == "signal")
+		document.getElementById("arrow_signal").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_signal").src="/images/qis/blank.png";
+
+	if (index_flag == "frequency")
+		document.getElementById("arrow_frequency").src="/images/qis/table_sort_"+ Arrow_flag  +".png";
+	else
+		document.getElementById("arrow_frequency").src="/images/qis/blank.png";
+
+	// Only arrow_flag is selected, hidden "background"
+	// for background image
+	var background_flag = "back_" + arrow_flag;
+	document.getElementById(background_flag).style.background="#151E21";
+}
+
+function removeRow(){
+	// remove inputRow
+	$(".inputRow").remove();
+	// remove all arrow img
+	document.getElementById("arrow_SSID").src="/images/qis/blank.png";
+	document.getElementById("arrow_channel").src="/images/qis/blank.png";
+	document.getElementById("arrow_security").src="/images/qis/blank.png";
+	document.getElementById("arrow_signal").src="/images/qis/blank.png";
+	document.getElementById("arrow_frequency").src="/images/qis/blank.png";
+}
+
+// create an object for sorting
+var sorter = {
+	"currentType" :  "SSID",// what column to sort
+	"currentOrder" : "asc",	// asc, desc
+	"sortConfig" : {	// return column index
+		"SSID": { "columnIndex" : 0 },
+		"channel": { "columnIndex" : 1 },
+		"security": { "columnIndex" : 2 },
+		"signal": { "columnIndex" : 3 },
+		"frequency": { "columnIndex" : 4 }
+	},
+	"sortBy" : function(t) {// sort by what column
+		if (this.currentType == t)
+			this.currentOrder = (this.currentOrder == "asc"? "desc": "asc");
+		else
+			this.currentType = t;
+
+		var arrow_id = "arrow_" + this.currentType;
+		if (this.currentOrder == "asc")
+			var arrow_dir = "up";
+		else
+			var arrow_dir = "down";
+		document.getElementById(arrow_id).src="/images/qis/table_sort_"+ arrow_dir  +".png";
+
+		var keyCellIndex = this.sortConfig[this.currentType].columnIndex;// cell index
+		if (keyCellIndex == 0 || keyCellIndex == 2 || keyCellIndex == 4)
+			var funcSort = this["funcSortStr_" + this.currentOrder];// sort function for string: asc or desc
+		else if (keyCellIndex == 1 || keyCellIndex == 3)
+			var funcSort = this["funcSort_" + this.currentOrder];	// sort function : asc or desc
+		this.doSort(keyCellIndex, funcSort);// do sort
+	},
+	"funcSort_desc" : function(a,b) {
+		return a.key - b.key;
+	},
+	"funcSort_asc" : function(a,b) {
+		return b.key - a.key;
+	},
+	"funcSortStr_desc" : function(a,b) {
+		if (a.key == b.key) return 0;
+		else if (a.key > b.key) return 1;
+		else return -1;
+	},
+	"funcSortStr_asc" : function(a,b) {
+		if (a.key == b.key) return 0;
+		else if (a.key > b.key) return -1;
+		else return 1;
+	},
+	"getRows" : function() {	// get the row
+		var tbody = this.getTbody();
+		var rows = tbody.getElementsByTagName('tr');
+		return rows;
+	},
+	"getTbody" : function() {	// get table tbody
+		return document.getElementById('aplist_table').getElementsByTagName('tbody')[0];
+	},
+	"doSort" : function(keyCellIndex, sortFunc) {
+		var rows = this.getRows();
+		var keys = [];
+		var browser = navigator.userAgent;
+
+		// depend on keyCellIndex ti get column's value every row
+		for (var i = 0, cell, row = rows[0]; row; row = rows[++i]) {
+			if (keyCellIndex == 1 || keyCellIndex == 2 || keyCellIndex == 4)// channel/security/frequency
+				cell = row.getElementsByTagName('td')[keyCellIndex].firstChild.nodeValue;
+			else if (keyCellIndex == 0) {// SSID
+				if (row.getElementsByTagName('td')[keyCellIndex].getElementsByTagName('span')[0].firstChild == null)
+					cell = "";
+				else 
+					cell = row.getElementsByTagName('td')[keyCellIndex].getElementsByTagName('span')[0].firstChild.nodeValue;
+			} else if (keyCellIndex == 3)// signal
+				cell = row.getElementsByTagName('td')[keyCellIndex].getElementsByTagName('img')[0].getAttribute('title');
+			keys[i] = {
+				"key": cell,
+				"row": row
+			}
+		}
+		keys.sort(sortFunc);// do sorting
+
+		var tbody = this.getTbody();
+		for (var i = 0, r = keys[i]; r; r = keys[++i])
+			tbody.appendChild(r.row);// append row
+	}
+}
+/* table sorting */
+
+/* handle manual setting page */
+var manualHandler = {
+	"changeAuthMode" : function(v) {
+		if (v.search("psk") != -1) {
+			document.getElementById("manual_crypto").parentNode.parentNode.style.display = "";
+			document.getElementById("manual_wep").parentNode.parentNode.style.display = "none";
+			document.getElementById("manual_keyidx").parentNode.parentNode.style.display = "none";
+			document.getElementById("manual_key").parentNode.parentNode.style.display = "";
+		} else {
+			document.getElementById("manual_crypto").parentNode.parentNode.style.display = "none";
+			document.getElementById("manual_wep").parentNode.parentNode.style.display = "";
+			if (v == "shared")
+				this.regenOption(document.getElementById("manual_wep"), ["WEP-64bits", "WEP-128bits"], ["1", "2"]);
+			else
+				this.regenOption(document.getElementById("manual_wep"), ["<#PPPConnection_Authentication_null#>", "WEP-64bits", "WEP-128bits"], ["0", "1", "2"]);
+			this.changeWepMode();
+		}
+	},
+	"changeWepMode" : function() {
+		var v = document.getElementById("manual_wep").value;
+		document.getElementById("manual_keyidx").parentNode.parentNode.style.display = (v == 0) ? "none" : "";
+		document.getElementById("manual_key").parentNode.parentNode.style.display = (v == 0) ? "none" : "";
+	},
+	"regenOption" : function(o, optArray, valArray) {
+		o.options.length = 0;
+		for (var i=0; i<optArray.length; i++) {
+			newItem = new Option(optArray[i], valArray[i]);
+			o.options.add(newItem);
+		}
+		o.selectedIndex = 0;
+	}
+}
+
+/* handle button event */
+var aplist_state = 0;// 0:apscan page, 1:manual page
+var runtime_sta_ch;
+var btnHandler = {
+	"SiteSurvey" : function() {
+		location.href = "QIS_survey.htm";
+	},
+	"gotoModeSelect" : function() {
+		location.href = "QIS_opmode.htm";
+	},
+	"gotoManual" : function() {
+		if (lastClickTr) {// remove input Row
+			$(".inputRow").remove();
+			lastClickTr.css("background",lastClickTrBg);
+			lastClickTr.find("td").css("color",lastClickTrC);
+		}
+
+		document.getElementById('apscan_btn').innerHTML = "";
+		document.getElementById("apscan_content").style.display = "none";
+		document.getElementById("manual_content").style.display = "";
+		if (band5g_support != -1 || nonconcurrent_support != -1)
+			document.getElementById("wl_unit_field").style.display = "";
+		if (parent.select_anotherPAP == 1)
+			document.getElementById("wl_unit_field").style.display = "none";
+
+		manualHandler.changeAuthMode("open");
+		document.getElementById("manual_ssid").value = "";
+		document.getElementById("manual_auth").selectedIndex = 0;
+		document.getElementById("manual_key").value = "";
+		aplist_state = 1;
+	},
+	"gotoAPList" : function() {
+		show_hint();
+		document.getElementById("apscan_content").style.display = "";
+		document.getElementById("manual_content").style.display = "none";
+		aplist_state = 0;
+	},
+	"skip" : function(n) {
+		//clear another PAP information
+		parent.document.QKform.sta_ssid[n].value = "";
+		parent.document.QKform.sta_bssid[n].value = "";
+		parent.document.QKform.sta_auth_mode[n].value = "open";
+		parent.document.QKform.sta_wep_x[n].value = "0";
+		parent.document.QKform.sta_wpa_mode[n].value = "2";
+		parent.document.QKform.sta_crypto[n].value = "aes";
+		parent.document.QKform.sta_encryption[n].value = "";
+		parent.document.QKform.sta_wpa_psk[n].value = "";
+		parent.document.QKform.sta_key[n].value = "1";
+		parent.document.QKform.sta_key_type[n].value = "0";
+		parent.document.QKform.sta_key1[n].value = "";
+		parent.document.QKform.sta_key2[n].value = "";
+		parent.document.QKform.sta_key3[n].value = "";
+		parent.document.QKform.sta_key4[n].value = "";
+
+		if ((sw_mode == 2 && re_mediabridge == 0) || sw_mode == 5)
+			document.form.action = "/qis/QIS_apextended.htm";
+		else
+			document.form.action = "/qis/QIS_finish.htm";
+		document.form.submit();
+	},
+	"APList_conn" : function(n) {
+		var hidden_ap = "0";
+		if (!chk_sta_password(n)) return false;
+
+		if (parent.document.QKform.sta_ssid[n].value == "") {
+			hidden_ap = "1";
+			parent.document.QKform.sta_ssid[n].value = document.form.QIS_apencryption_id.value;
+		}
+
+		if (parent.document.QKform.sta_encryption[n].value == "NONE"
+				|| chk_pap_pw_support == -1 
+				|| parent.isWLclient()) {
+			this.COMMON(n);
+			return;
+		}
+
+		document.getElementById("connect_btn").style.display = "none";
+		document.getElementById("runtime_chk_hint").innerHTML = "<#QIS_apply_hint0#><img src='/images/InternetScan.gif'>";
+		document.getElementById("runtime_chk_hint_tr").style.display = "";
+		disable_bind_event = "1";
+
+		var arg = "";
+		arg += 'sta_band='+n;
+		arg += '&sta_ssid='+encodeURIComponent(parent.document.QKform.sta_ssid[n].value);
+		arg += '&sta_bssid='+parent.document.QKform.sta_bssid[n].value;
+		arg += '&sta_wpa_psk='+encodeURIComponent(parent.document.QKform.sta_wpa_psk[n].value);
+		arg += '&sta_auth_mode='+parent.document.QKform.sta_auth_mode[n].value;
+		arg += '&sta_crypto='+parent.document.QKform.sta_crypto[n].value;
+		arg += '&sta_wpa_mode='+parent.document.QKform.sta_wpa_mode[n].value;
+		arg += '&sta_wep_x='+parent.document.QKform.sta_wep_x[n].value;
+		arg += '&sta_key='+parent.document.QKform.sta_key[n].value;
+		//arg += '&sta_key_type='+parent.document.QKform.sta_key_type[n].value;
+		arg += '&sta_key1='+parent.document.QKform.sta_key1[n].value;
+		arg += '&sta_key2='+parent.document.QKform.sta_key2[n].value;
+		arg += '&sta_key3='+parent.document.QKform.sta_key3[n].value;
+		arg += '&sta_key4='+parent.document.QKform.sta_key4[n].value;
+		arg += '&sta_ch='+runtime_sta_ch;
+
+		$.ajax({
+			url: '/ajax_check_pap_password.asp',
+			dataType: 'script',
+			data: arg,
+			error: function(xhr) {
+				setTimeout("btnHandler.APList_conn("+n+");", 1000);
+			},
+			success: function(response) {
+				disable_bind_event = "0";
+				document.getElementById("connect_btn").style.display = "";
+				if ((runtime_connStatus == 1 || runtime_connStatus == 3) && hidden_ap == "1")
+					parent.document.QKform.sta_ssid[n].value = "";
+				if (runtime_connStatus == 1)
+					document.getElementById("runtime_chk_hint").innerHTML = "<#QIS_apply_hint2#>";
+				else if (runtime_connStatus == 3)
+					document.getElementById("runtime_chk_hint").innerHTML = "<#QIS_apply_hint3#>";
+				else
+					btnHandler.COMMON(n);
+			}
+		});
+	},
+	"Manual_conn" : function() {
+		var auth = document.getElementById("manual_auth").value;
+		var wep = document.getElementById("manual_wep").value;
+		var key = document.getElementById("manual_key").value;
+		var n;
+
+		if (parent.select_anotherPAP == 1)
+			n = (parent.select_firstPAP == "5G") ? "0" : "1";
+		else
+			n = document.getElementById("manual_band").value;
+		parent.document.QKform.cur_freq.value = n;
+		if (nonconcurrent_support != -1)
+			n = 0;
+
+		//parent-AP info key into QKform
+		parent.document.QKform.sta_ssid[n].value = document.getElementById("manual_ssid").value;
+		if (auth == "psk" || auth == "psk2") {
+			if (!re_validate_psk(document.getElementById("manual_key")))
+				return false;
+			parent.document.QKform.sta_wpa_mode[n].value = (auth == "psk") ? "1" : "2";
+			parent.document.QKform.sta_auth_mode[n].value = "psk";
+		} else {
+			if (wep != 0 && !validate_sta_wep_key(document.getElementById("manual_key"), n))
+				return false;
+			parent.document.QKform.sta_auth_mode[n].value = auth;
+		}
+		parent.document.QKform.sta_crypto[n].value = document.getElementById("manual_crypto").value;
+		parent.document.QKform.sta_wep_x[n].value = wep;
+		parent.document.QKform.sta_key[n].value = document.getElementById("manual_keyidx").value;
+		parent.document.QKform.sta_wpa_psk[n].value = key;
+		parent.document.QKform.sta_key1[n].value = key;
+		parent.document.QKform.sta_key2[n].value = key;
+		parent.document.QKform.sta_key3[n].value = key;
+		parent.document.QKform.sta_key4[n].value = key;
+
+		this.COMMON(n);
+	},
+	"COMMON" : function(n) {
+		if (parent.select_anotherPAP == 0 && parent.aroundAP_5G == 1 && parent.aroundAP_2G == 1 && nonconcurrent_support == -1){
+			document.getElementById('aplist_title').innerHTML = "<#QIS_aplist_title2#>";
+			if (n == "1")
+				parent.select_firstPAP = "5G";
+			else
+				parent.select_firstPAP = "2.4G";
+			parent.select_anotherPAP = 1;
+
+			this.gotoAPList();
+			showList();
+			sorter.sortBy('signal');
+			sorter.sortBy('signal');
+			return;
+		}
+
+		if ((sw_mode == 2 && repeater_mode_v2_support == -1 && re_mediabridge == 0) || sw_mode == 5)
+			document.form.action = "/qis/QIS_apextended.htm";
+		else
+			document.form.action = "/qis/QIS_finish.htm";
+		document.form.submit();
+	}
+}
+
+function _submitenter(o, e){
+	if (($(".inputRow").length == 0 || disable_bind_event == "1") && aplist_state == 0)
+		return false;
+
+	var keycode;
+	if (window.event)
+		keycode = window.event.keyCode;
+	else if (e)
+		keycode = e.which;
+	else
+		return false;
+
+	if (keycode == 13) {
+		if (o.name == "QIS_apencryption_pwd" 
+				|| o.name == "show_pass_ckb")
+			return false;
+		else {
+			if (aplist_state == 0) {
+				$("#connect_btn").focus();
+				$("#connect_btn").select();
+				$("#connect_btn").click();
+			} else {
+				$("#manual_connect_btn").focus();
+				$("#manual_connect_btn").select();
+				$("#manual_connect_btn").click();
+			}
+		}
+	}
+}
+</script>
+</head>  
+
+<body onLoad="QKinternettype_load_body();" onunload="" onKeyPress="_submitenter(this,event)">
+<form method="post" name="form" action="" target="">
+<input type="hidden" name="current_page" value="QIS_aplist.htm">
+<input type="hidden" name="flag" value="apencryption">
+<div class="QISmain">
+  <div class="QISformfonttitle">
+	<span id="aplist_title"><#QIS_aplist_title#></span>
+	<img id="smaill_flow_1" src="/images/small_flow/flow01-2.png" class="small_img_1">
+	<img id="smaill_flow_2" src="/images/small_flow/setting.gif" class="small_img_2">
+	<img id="smaill_flow_3" src="/images/small_flow/flow02.png" class="small_img_3">
+	<img id="smaill_flow_4" src="/images/small_flow/flow-wire.png" class="small_img_4">
+	<img id="smaill_flow_5" src="/images/small_flow/flow03.png" class="small_img_5">
+	<img onclick="parent.gotoIndex();" align="right" style="cursor:pointer;margin:-10px -20px 10px 5px; *margin-top:-25px;" title="<#CTL_Setting#>" src="/images/backtohome.png" onMouseOver="this.src='/images/backtohomeclick.png'" onMouseOut="this.src='/images/backtohome.png'">
+  </div>
+  <div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img style="width: 700px; height: 2px;" src="/images/New_ui/export/line_export.png"></div>
+
+  <div id="apscan_btn" style="text-align:right;margin-right:30px;"></div>
+  <div id="aplist_prompt" class="QISGeneralFont" style="color:#FFCC00;margin-top:10px;"></div>
+
+  <div id="apscan_content" style="margin-left:35px;margin-top:10px;">
+	<table class="QIS_survey" id="ap_title" style="width:663px;">
+	  <thead>
+	  <tr style="height:18px;">
+		<th width="206px" class="table_sorting" onclick="removeRow();sorter.sortBy('SSID');" onmouseover="showArrow('SSID');" onmouseout="deleteArrow('SSID');"><#NM_Wireless_name#></th>
+		<th width="70px"  class="table_sorting" onclick="removeRow();sorter.sortBy('channel');" onmouseover="showArrow('channel');" onmouseout="deleteArrow('channel');"><#WLANConfig11b_Channel_itemname#></th>
+		<th width="174px" class="table_sorting" onclick="removeRow();sorter.sortBy('security');" onmouseover="showArrow('security');" onmouseout="deleteArrow('security');"><#QIS_Security#></th>
+		<th width="100px" class="table_sorting" onclick="removeRow();sorter.sortBy('signal');" onmouseover="showArrow('signal');" onmouseout="deleteArrow('signal');"><#QIS_Radio#></th>
+		<th width="100px" class="table_sorting" onclick="removeRow();sorter.sortBy('frequency');" onmouseover="showArrow('frequency');" onmouseout="deleteArrow('frequency');"><#QIS_frequency#></th>
+	  </tr>
+	  <tr style="height:10px;">
+		<th width="206px" class="table_sorting_img" id="back_SSID" onclick="removeRow();sorter.sortBy('SSID');" onmouseover="showArrow('SSID');" onmouseout="deleteArrow('SSID');"><img id="arrow_SSID" src="/images/qis/blank.png"></th>
+		<th width="70px"  class="table_sorting_img" id="back_channel" onclick="removeRow();sorter.sortBy('channel');" onmouseover="showArrow('channel');" onmouseout="deleteArrow('channel');"><img id="arrow_channel" src="/images/qis/blank.png"></th>
+		<th width="174px" class="table_sorting_img" id="back_security" onclick="removeRow();sorter.sortBy('security');" onmouseover="showArrow('security');" onmouseout="deleteArrow('security');"><img id="arrow_security" src="/images/qis/blank.png"></th>
+		<th width="100px" class="table_sorting_img" id="back_signal" onclick="removeRow();sorter.sortBy('signal');" onmouseover="showArrow('signal');" onmouseout="deleteArrow('signal');"><img id="arrow_signal" src="/images/qis/blank.png"></th>
+		<th width="100px" class="table_sorting_img" id="back_frequency" onclick="removeRow();sorter.sortBy('frequency');" onmouseover="showArrow('frequency');" onmouseout="deleteArrow('frequency');"><img id="arrow_frequency" src="/images/qis/blank.png"></th>
+	  </tr>
+	  </thead>
+	</table>
+
+	<div style="height:320px;overflow-y:auto;width:680px;">
+	  <table class="QIS_survey" id="aplist_table"><tbody></tbody></table>
+	</div>
+  </div>
+
+  <div id="wifipxy_field" class="QISGeneralFont" style="color:#FFCC00;margin-top:10px;">
+	<input type="checkbox" name="en_wifipxy_chk" onclick="en_wifipxy();"><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 25);"><#WiFiProxy_itemname#></a>
+	<span id="wifipxy_prompt" style="display:none;"><#WiFiProxy_prompt#></span>
+  </div>
+
+  <div id="manual_content" style="display:none;margin-top:30px;">
+	<table class="QISform" width="400" border=0 align="center" cellpadding="5" cellspacing="0" style="padding-left:30px;">
+	  <tr id="wl_unit_field" style="display:none;">
+		<th width="25%"><#QIS_frequency#></th>
+		<td>
+		  <select id="manual_band" class="input_option">
+			<option class="content_input_fd" value="0" selected>2.4GHz</option>
+			<option class="content_input_fd" value="1">5GHz</option>
+		  </select>
+		</td>
+	  </tr>
+	  <tr>
+		<th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 1);"><#WLANConfig11b_SSID_itemname#></a></th>
+		<td><input type="text" maxlength="32" class="input_32_table" id="manual_ssid" value=""></td>
+	  </tr>
+	  <tr>
+		<th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 5);"><#WLANConfig11b_AuthenticationMethod_itemname#></a></th>
+		<td>
+		  <select id="manual_auth" class="input_option" onChange="manualHandler.changeAuthMode(this.value)">
+			<option value="open">Open System</option>
+			<option value="shared">Shared Key</option>
+			<option value="psk">WPA-Personal</option>
+			<option value="psk2">WPA2-Personal</option>
+		  </select>
+		</td>
+	  </tr>
+	  <tr>
+		<th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 6);"><#WLANConfig11b_WPAType_itemname#></a></th>
+		<td>
+		  <select id="manual_crypto" class="input_option">
+			<option value="tkip">TKIP</option>
+			<option value="aes">AES</option>
+		  </select>
+		</td>
+	  </tr>
+	  <tr>
+		<th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 9);"><#WLANConfig11b_WEPType_itemname#></a></th>
+		<td><select id="manual_wep" class="input_option" onChange="manualHandler.changeWepMode();"></select></td>
+	  </tr>
+	  <tr>
+		<th><a class="hintstyle" href="javascript:void(0);" onClick="openHint(0, 10);"><#WLANConfig11b_WEPDefaultKey_itemname#></a></th>
+		<td>
+		  <select id="manual_keyidx" class="input_option">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		  </select>
+		</td>
+	  </tr>
+	  <tr>
+		<th><#QIS_Security_Key#></th>
+		<td><input type="password" id="manual_key" class="input_32_table" style="height:25px;" onBlur="switchType(this, false);" onFocus="switchType(this, true);"></td>
+	  </tr>
+	</table>
+
+	<div class="apply_gen" style="margin-top:15px;">
+	  <input type="button" value="<#CTL_Cancel#>" onclick="btnHandler.gotoAPList();" class="button_gen">
+	  <input type="button" id="manual_connect_btn" value="<#CTL_Add_enrollee#>" onclick="btnHandler.Manual_conn();" class="button_gen">
+	</div>
+  </div>
+</div>
+</form>
+</body>
+</html>

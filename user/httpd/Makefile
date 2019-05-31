@@ -1,0 +1,121 @@
+#
+# httpd Makefile
+#
+# Copyright (C) 2013 ASUSTek Inc.
+#
+
+USERDIR = $(ROOTDIR)/user
+
+CFLAGS += -s \
+	-Wall \
+	-DASUS_NVRAM \
+	-DTRANSLATE_ON_FLY \
+	-DWPS_SUPPORT
+
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_EAN66)),y)
+CFLAGS += -DSWMODE_ADAPTER_SUPPORT \
+	-DDUAL_BAND_NONCONCURRENT \
+	-DWPA_ENTERPRISE_SUPPORT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN12)),y)
+CFLAGS += -DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN14)),y)
+CFLAGS += -DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DINTERNET_RADIO \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPN53)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DINTERNET_RADIO \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPAC52)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DINTERNET_RADIO \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT \
+	-DIEEE802_11AC
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_RPAC56)),y)
+CFLAGS += -DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT \
+	-DIEEE802_11AC
+else
+ifeq ($(filter y, $(CONFIG_DEFAULTS_ASUS_WMPN12)),y)
+CFLAGS += -DUSB_TO_CM6510 \
+	-DURL_PLAYER \
+	-DINTERNET_RADIO \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT \
+	-DLED_INDICATE_AUDIO_PLAY
+else
+CFLAGS += -DAUDIO_JACK_SUPPORT \
+	-DI2C_TO_ALC5627 \
+	-DUSB_TO_CM6510 \
+	-DURL_PLAYER \
+	-DUSB_SUPPORT \
+	-DASUS_DDNS \
+	-DROUTING_SUPPORT \
+	-DSWMODE_REPEATER_EXPRESSWAY_SUPPORT \
+	-DSWMODE_ADAPTER_SUPPORT \
+	-DSWMODE_HOTSPOT_SUPPORT \
+	-DDUAL_BAND_NONCONCURRENT \
+	-DWPA_ENTERPRISE_SUPPORT \
+	-DINTERNET_RADIO \
+	-DRUNTIME_CHECK_PAP_PASSWORD \
+	-DAPP_SUPPORT \
+	-DLED_INDICATE_AUDIO_PLAY \
+	-DIEEE802_11AC
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+
+CFLAGS += -I. \
+	-I$(ROOTDIR)/$(LINUXDIR)/include \
+	-I$(ROOTDIR)/$(LINUXDIR)/drivers/flash \
+	-I$(ROOTDIR)/$(LINUXDIR)/drivers/net/raeth \
+	-I$(ROOTDIR)/lib/include \
+	-I$(USERDIR)/shared \
+	-I$(USERDIR)/shared/include \
+	-I$(USERDIR)/shared/chipdeps \
+	-I$(USERDIR)/wireless_tools
+
+LDFLAGS = -lm \
+	-L$(USERDIR)/shared -lshared
+
+EXEC = httpd
+
+OBJS = httpd.o \
+	ej.o \
+	cgi.o \
+	web.o \
+	web-ralink.o \
+	web-iradio.o \
+	web-app.o \
+	crc32.o
+
+all: $(OBJS)
+	$(CC) -o $(EXEC) $(OBJS) $(LDFLAGS)
+	$(STRIP) $(EXEC)
+
+common.o: common.c variables.c
+
+clean:
+	rm -f *.o *~ $(EXEC) .sgbuilt_user
+
+romfs:
+	$(ROMFSINST) /usr/sbin/httpd

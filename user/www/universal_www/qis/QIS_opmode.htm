@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>                                     
+<!--[if !(IE 7)]><!--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><!--<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="icon" href="images/favicon.png">
+<title></title>
+<link rel="stylesheet" type="text/css" href="/form_style.css">
+<link rel="stylesheet" type="text/css" href="/qis/qis_style.css">
+<script type="text/JavaScript" src="/state.js"></script>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="/qis/QIS_general.js"></script>
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+
+function QKinternettype_load_body(){
+	parent.set_step("t0");
+	showOpMode_info();
+}
+
+function showOpMode_info(){
+	var html_code = "";
+
+	html_code += '<span><#QIS_opmode_desc1#></span><span id="mode_name" style="margin-left:5px;font-size:16px;font-weight:bolder;margin-top:20px;"></span>';
+	html_code += '<table style="margin-left:30px;margin-top:10px;width:500px;">';
+	html_code += '<tr><td class="QIS_opmode_radio"><input type="radio" name="opmode_selection" value="2" <% nvram_match("sw_mode", "2", "checked"); %> onclick="setScenerio(2)"></td><td><#QIS_opmode_desc4#></td></tr>';
+	if (ap_mode_support != -1)
+		html_code += '<tr><td class="QIS_opmode_radio"><input type="radio" name="opmode_selection" value="3" <% nvram_match("sw_mode", "3", "checked"); %> onclick="setScenerio(3)"></td><td><#QIS_opmode_desc3#></td></tr>';
+	if (ea_mode_support != -1)
+		html_code += '<tr><td class="QIS_opmode_radio"><input type="radio" name="opmode_selection" value="4" <% nvram_match("sw_mode", "4", "checked"); %> onclick="setScenerio(4)"></td><td><#QIS_opmode_desc2#></td></tr>';
+	html_code += '</table>';
+	document.getElementById("mode_select").innerHTML = html_code;
+
+	setScenerio('<% nvram_get("sw_mode"); %>');
+}
+
+function setScenerio(mode){
+	parent.document.QKform.sw_mode.value = mode;
+	if (mode == '2') {
+		document.form.opmode_RE.style.display = "block";
+		document.form.opmode_AP.style.display = "none";
+		document.form.opmode_EA.style.display = "none";
+		$j("#mode_name").html("<#QIS_opmode_RE#>");
+		$j("#mode_desc").html("<#QIS_opmode_RE_desc#>");
+	} else if (mode == '3') {
+		document.form.opmode_RE.style.display = "none";
+		document.form.opmode_AP.style.display = "block";
+		document.form.opmode_EA.style.display = "none";
+		$j("#mode_name").html("<#QIS_opmode_AP#>");
+		$j("#mode_desc").html("<#QIS_opmode_AP_desc#>");
+	} else if (mode == '4') {
+		document.form.opmode_RE.style.display = "none";
+		document.form.opmode_AP.style.display = "none";
+		document.form.opmode_EA.style.display = "block";
+		$j("#mode_name").html("<#QIS_opmode_EA#>");
+		$j("#mode_desc").html("<#QIS_opmode_EA_desc#>");
+	}
+}
+
+function gotoNext(){
+	var mode = parent.document.QKform.sw_mode.value
+	if (mode == '2')
+		location.href = "QIS_survey.htm";
+	else if (mode == '3')
+		location.href = "QIS_wireless.htm";
+	else if (mode == '4') {
+		if (parent.isWLclient()) {
+			alert("<#QIS_opmode_isWLClient_warning#>");
+			return false;
+		}
+		location.href = "QIS_survey.htm";
+	}
+}
+</script>
+</head>
+
+<body onLoad="QKinternettype_load_body();" onunload="" onKeyPress="submitenter(this,event)">
+<form method="post" name="form" action="">
+<input type="hidden" name="current_page" value="QIS_opmode.htm">
+<input type="hidden" name="next_page" value="">
+<input type="hidden" name="prev_page" value="">
+<input type="hidden" name="flag" value="">
+<div class="QISmain">
+  <div class="QISformfonttitle"><#QIS_opmode_title#>
+	<img onclick="parent.gotoIndex();" align="right" style="cursor:pointer;margin:-10px -20px 10px 5px; *margin-top:-25px;" title="<#CTL_Setting#>" src="/images/backtohome.png" onMouseOver="this.src='/images/backtohomeclick.png'" onMouseOut="this.src='/images/backtohome.png'">
+  </div>
+  <div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img style="width: 700px; height: 2px;" src="/images/New_ui/export/line_export.png"></div>
+
+  <div style="margin-left:35px;margin-top:10px;" class="opmode_form" id="mode_select"></div>
+  <div style="margin-left:70px;margin-bottom:10px;height:180px;">
+	<img name="opmode_RE" src="/images/qis/RE.gif" style="display:none">
+	<img name="opmode_AP" src="/images/qis/AP.gif" style="display:none">
+	<img name="opmode_EA" src="/images/qis/EA.gif" style="display:none">
+  </div>
+  <div style="margin-left:35px;height:50px;" id="mode_desc"></div>
+  <div class="apply_gen" style="margin-top:20px">
+	<input class="button_gen" type="button" value="<#CTL_next#>" onclick="gotoNext();">
+  </div>
+</div>
+</form>
+</body>
+</html>

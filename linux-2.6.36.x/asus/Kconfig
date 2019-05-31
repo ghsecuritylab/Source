@@ -1,0 +1,18 @@
+menu "ASUS Model"
+
+config RPN12
+	bool "RP-N12"
+
+config RPN14
+	bool "RP-N14"
+
+config RPN53
+	bool "RP-N53"
+
+config RPAC52
+	bool "RP-AC52"
+
+config WMPN12
+	bool "WMP-N12"
+
+endmenu

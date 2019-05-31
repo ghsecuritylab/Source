@@ -1,0 +1,20 @@
+/Makefile.am/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/Makefile.in/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/avpair.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/buildreq.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/clientid.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/config.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/dict.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/env.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/ip_util.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/lock.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/log.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/md5.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/memcmp.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/options.h/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/sendserver.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/strcasecmp.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/strdup.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/strerror.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+/util.c/1.1.1.1/Thu Feb 15 12:14:18 2007//
+D

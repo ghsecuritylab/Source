@@ -1,0 +1,385 @@
+xml-util.lo xml-util.o: xml-util.c \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h \
+  xml-util.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glib.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/galloca.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtypes.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glibconfig.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmacros.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/garray.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gasyncqueue.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gthread.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gerror.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gquark.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gutils.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gatomic.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbacktrace.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbase64.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbitlock.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbookmarkfile.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gcache.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glist.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmem.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gslice.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gchecksum.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gcompletion.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gconvert.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdataset.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdate.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdatetime.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtimezone.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdir.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gfileutils.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghash.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghook.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghostutils.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/giochannel.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmain.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gpoll.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gslist.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gstring.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gunicode.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gkeyfile.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmappedfile.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmarkup.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmessages.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gnode.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/goption.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gpattern.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gprimes.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gqsort.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gqueue.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/grand.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/grel.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gregex.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gscanner.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gsequence.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gshell.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gspawn.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gstrfuncs.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtestutils.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gthreadpool.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtimer.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtree.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gurifuncs.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gvarianttype.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gvariant.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/tree.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdio.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_stdio.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/wchar.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/wchar.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stdio_lim.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlversion.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlexports.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlstring.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlregexp.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/dict.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlmemory.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/threads.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/globals.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/parser.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/hash.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/valid.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlerror.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/list.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlautomata.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/entities.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/encoding.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlIO.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/SAX.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdlib.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h \
+  /opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/alloca.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xlink.h \
+  /source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/SAX2.h
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h:
+
+xml-util.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glib.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/galloca.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtypes.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glibconfig.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmacros.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/garray.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gasyncqueue.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gthread.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gerror.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gquark.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gutils.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gatomic.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbacktrace.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbase64.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbitlock.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gbookmarkfile.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gcache.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/glist.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmem.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gslice.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gchecksum.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gcompletion.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gconvert.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdataset.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdate.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdatetime.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtimezone.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gdir.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gfileutils.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghash.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghook.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/ghostutils.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/giochannel.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmain.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gpoll.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gslist.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gstring.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gunicode.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gkeyfile.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmappedfile.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmarkup.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gmessages.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gnode.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/goption.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gpattern.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gprimes.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gqsort.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gqueue.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/grand.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/grel.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gregex.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gscanner.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gsequence.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gshell.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gspawn.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gstrfuncs.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtestutils.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gthreadpool.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtimer.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gtree.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gurifuncs.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gvarianttype.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//glib-2.28.0/glib/gvariant.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/tree.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdio.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_stdio.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/wchar.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/wchar.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stdio_lim.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlversion.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlexports.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlstring.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlregexp.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/dict.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlmemory.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/threads.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/globals.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/parser.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/hash.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/valid.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlerror.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/list.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlautomata.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/entities.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/encoding.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xmlIO.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/SAX.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdlib.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h:
+
+/opt/buildroot-gcc342/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/alloca.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/xlink.h:
+
+/source/RP-N53WM/GPL/lib/gupnp-av-0.10.0/..//libxml2-2.8.0/include/libxml/SAX2.h:

@@ -1,0 +1,15 @@
+#
+# Makefile for glib
+#
+
+SUBDIRS = interfaces rtp sdp rtsp audio
+
+all shared install:
+	@for X in $(SUBDIRS) ; do \
+		$(MAKE) -C $$X; done
+clean:
+	@for X in $(SUBDIRS) ; do \
+		$(MAKE) -C $$X clean; done
+	rm -f checkfile
+
+.PHONY: dummy all clean

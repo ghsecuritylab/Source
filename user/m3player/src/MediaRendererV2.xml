@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <!-- URLBase>http://localhost</URLBase -->
+  <device>
+    <deviceType>urn:schemas-upnp-org:device:MediaRenderer:2</deviceType>
+    <friendlyName>@HOSTNAME@</friendlyName>
+    <manufacturer>ASUS</manufacturer>
+    <manufacturerURL>http://www.asus.com/</manufacturerURL>
+    <modelName>ZVMODELVZ</modelName>
+    <modelNumber>@VERSION@</modelNumber>
+    <modelURL>http://support.asus.com/</modelURL>
+    <UDN>uuid:a2b641be-9543-11e0-bd20-@UUMAC@</UDN>
+    <!--modelDescription></modelDescription>
+    <serialNumber>1234567890</serialNumber>
+    <UPC>Universal Product Code</UPC-->
+    <iconList>
+    <icon>
+      <mimetype>image/png</mimetype>
+      <width>120</width>
+      <height>120</height>
+      <depth>32</depth>
+      <url>/model.png</url>
+    </icon>
+    </iconList>
+    <serviceList>
+    <service>
+      <serviceType>urn:schemas-upnp-org:service:RenderingControl:2</serviceType>
+      <serviceId>urn:upnp-org:serviceId:RenderingControl:2</serviceId>
+      <SCPDURL>/RenderingControlV2.xml</SCPDURL>
+      <controlURL>/RenderingControl/Control</controlURL>
+      <eventSubURL>/RenderingControl/Event</eventSubURL>
+    </service>
+    <service>
+      <serviceType>urn:schemas-upnp-org:service:ConnectionManager:2</serviceType>
+      <serviceId>urn:upnp-org:serviceId:ConnectionManager:2</serviceId>
+      <SCPDURL>/ConnectionManagerV2.xml</SCPDURL>
+      <controlURL>/ConnectionManager/Control</controlURL>
+      <eventSubURL>/ConnectionManager/Event</eventSubURL>
+    </service>
+    <service>
+      <serviceType>urn:schemas-upnp-org:service:AVTransport:2</serviceType>
+      <serviceId>urn:upnp-org:serviceId:AVTransport:2</serviceId>
+      <SCPDURL>/AVTransportV2.xml</SCPDURL>
+      <controlURL>/AVTransport/Control</controlURL>
+      <eventSubURL>/AVTransport/Event</eventSubURL>
+    </service>
+    </serviceList>
+    <deviceList></deviceList>
+    <!-- presentationURL>URL for presentation</presentationURL -->
+  </device>
+</root>

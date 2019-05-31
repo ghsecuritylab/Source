@@ -1,0 +1,1 @@
+../RP-N53/ajax_det_ajack.asp

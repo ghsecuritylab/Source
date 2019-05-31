@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>sw_salt</TITLE>
+</HEAD>
+<BODY>
+<H1>sw_salt</H1><H3>OVERVIEW</H3>An <CODE>sw_salt</CODE> object manages event dispatching for Howl.<P>
+<HR><A NAME="sw_salt_step"><H3>FUNCTION</H3></A><H2>sw_salt_step</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_salt_step</CODE>(
+   sw_salt    self,
+   sw_ulong * msecs)
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>Dispatch events for max time in milliseconds. Pass NULL to wait until at least one event is dispatched.		<P>
+		<H3>EXAMPLE</H3>
+		<PRE><code>void process_howl_events(sw_salt salt) {
+   ...
+   sw_ulong msecs = 500;
+   sw_salt_step(salt, &amp;msecs);
+}
+</code>
+</PRE>
+		<H3>SEE ALSO</H3>
+		<A HREF="discovery.html#sw_discovery_init_with_salt"><CODE>sw_discovery_salt</CODE></A>
+		<P>
+	</BODY>
+</HTML>
+

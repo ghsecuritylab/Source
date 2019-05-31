@@ -1,0 +1,30 @@
+#
+# Makefile for libao
+#
+
+LIBDIR = $(ROOTDIR)/lib
+GLIBDIR = $(LIBDIR)/glib-2.35.1
+INSTALLDIR = $(ROOTDIR)/romfs
+
+CFLAGS = -O2 -I$(GLIBDIR)/include -I$(LIBDIR)/gupnp-av-0.10.0 -I$(LIBDIR)/gupnp-0.19.0 -I$(LIBDIR)/gssdp-0.13.0 -I$(LIBDIR)/libxml2-2.8.0/include -I$(LIBDIR)/libsoup-2.41.2 -I$(LIBDIR)/alsa-lib-1.0.18/include -I$(LIBDIR)/gstreamer-0.10.36
+
+CSRC=avtransport.c renderingcontrol.c connectionmanager.c m3player.c gstreamer.c last_change.c
+OBJS=$(patsubst %.c,%.o, $(CSRC))
+TARGET=m3player
+
+LDFLAGS = -Wl,--export-dynamic -L$(LIBDIR)/lib -lgobject-2.0 -lglib-2.0 -lgio-2.0 -lgupnp-av-1.0 -lgupnp-1.0 -lgssdp-1.0 -lxml2 -lsoup-2.4 -lgthread-2.0 -lgmodule-2.0 -lgstreamer-0.10 -luuid -lffi -lz -lc -lgcc
+
+all: $(OBJS)
+	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJS)
+	$(STRIP) $(TARGET)
+
+romfs:
+	$(ROMFSINST) /bin/$(TARGET)
+	mkdir -p $(INSTALLDIR)/m3player
+	cp -f *.xml $(INSTALLDIR)/m3player
+
+$(OBJS): %.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) *.o *~ core $(TARGET)

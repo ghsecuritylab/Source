@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gtodo>
+  <category title="Personal" place="0">
+    <item>
+      <summary>Trac</summary>
+      <comment>For open issues, see http://www.jcoderz.org/m3dditiez/report</comment>
+    </item>
+  </category>
+</gtodo>
+

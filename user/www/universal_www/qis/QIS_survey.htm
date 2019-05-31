@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>                                     
+<!--[if !(IE 7)]><!--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><!--<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="icon" href="images/favicon.png">
+<title></title>
+<link rel="stylesheet" type="text/css" href="/form_style.css">
+<link rel="stylesheet" type="text/css" href="/qis/qis_style.css">
+<script type="text/javascript" src="/state.js"></script>
+<script type="text/javascript" src="/qis/QIS_general.js"></script>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript">
+
+function QKinternettype_load_body(){
+	parent.set_step("t1");
+	setTimeout("ajaxGetData();",1000);
+	change_setting_img(parent.document.QKform.sw_mode.value, "survey");
+
+	if (nonconcurrent_support == -1)
+		QIS_showLoadingBar(7); // site survey 7+1 sec
+	else
+		QIS_showLoadingBar(11); // site survey 11+1 sec
+}
+
+var survey_finish = "";
+
+function ajaxGetData(e) { //Use AJAX to get real-time AP status from aplist.asp
+	survey_finish = 0;
+
+	$.ajax({
+		url: '/ajax_get_aplist.asp',
+		dataType: 'script',
+		error: function(xhr) {
+			setTimeout("ajaxGetData();",1000);
+		},
+		success: function(response) {
+			save_aplist_array();
+			survey_finish = 1;
+		}
+	});
+}
+
+function save_aplist_array(){
+	var content_num = 9; // depend on aplist array
+	aplist_array = new Array(aplist.length);
+	for(i=0; i<aplist.length; i++){
+		aplist_array[i]=new Array(content_num);
+		for(j=0; j<content_num; j++){
+			aplist_array[i][j]=aplist[i][j];
+		}
+	}
+	
+	/* only Firefox use	*/
+	/* toSource()	: convert "array" to "string" */
+	/* eval()			: convert "string" to "array" */
+	//parent.document.QKform.aplist_array.value=aplist_array.toSource();
+
+	parent.document.QKform.aplist_array.value=aplist_array.toString(); // save as string
+	parent.document.QKform.sta_ssid.value = profile_ssid; // initial the sta_ssid;
+}
+
+function gotoNext(){
+	if(survey_finish == "0"){
+		setTimeout("gotoNext();",500);
+		return;
+	}
+
+	document.form.action = "/qis/QIS_aplist.htm";
+	document.form.submit();
+}
+
+</script>
+</head>  
+<body onLoad="QKinternettype_load_body();" onunload="">
+<form method="post" name="form" action="/qis/QIS_aplist.htm">
+<input type="hidden" name="current_page" value="QIS_survey.htm">
+<input type="hidden" name="flag" value="aplist">
+<div class="QISmain">
+<div class="QISformfonttitle"><#QIS_survey_title#>
+		<img id="smaill_flow_1" src="/images/small_flow/flow01-2.png" class="small_img_1">
+		<img id="smaill_flow_2" src="/images/small_flow/setting.gif" class="small_img_2">
+		<img id="smaill_flow_3" src="/images/small_flow/flow02.png" class="small_img_3">
+		<img id="smaill_flow_4" src="/images/small_flow/flow-wire.png" class="small_img_4">
+		<img id="smaill_flow_5" src="/images/small_flow/flow03.png" class="small_img_5">
+</div>
+
+<div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img style="width: 700px; height: 2px;" src="/images/New_ui/export/line_export.png"></div>
+
+<div id="QIS_LoadingBar" style="margin-left:35px;margin-top:30px;margin-bottom:10px;width:700px;">
+	<table>
+		<div id="proceeding_info" style="height:22px;"><#QIS_survey_desc1#> <#QIS_survey_desc2#></div>
+		</br>
+		<tr>
+			<td id="proceeding_bar" style="width:590px;height:25px;">
+				<img class="img_left" src="/images/survey/loading_01.png">
+				<div id="proceeding_img"></div>
+				<div id="proceeding_per" class="proceeding_per"></div>
+				<img class="img_right" src="/images/survey/loading_04.png">
+			</td>
+		</tr>
+	</table>
+</div>
+
+</div>
+</form>
+</body> 
+</html>

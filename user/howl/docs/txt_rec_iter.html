@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+<TITLE>sw_discovery</TITLE>
+</HEAD>
+<BODY>
+<H1>sw_text_record_iterator</H1>
+		<H3>OVERVIEW</H3>
+		The sw_text_record_iterator functions is a simple class that abstracts away the underlying encoding scheme of DNS text records.  The functions allow developers to iterate through a text record simply, obtaining each constituent key/value pair.
+		<HR>
+		<A NAME="sw_text_record_iterator_init"><H3>FUNCTION</H3></A><H2>sw_text_record_iterator_init</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_text_record_iterator_init</CODE>(
+   sw_text_record_iterator * iterator)
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>
+		Creates a new text record iterator.
+		<p></p>
+		<H3>EXAMPLE</H3>
+		<PRE><CODE>sw_result
+my_resolve_func(
+  sw_discovery_resolve_handler handler,
+  sw_discovery                 discovery,
+  sw_discovery_resolve_id      id,
+  sw_const_string               name,
+  sw_const_string               type,
+  sw_const_string               domain,
+  sw_ipv4_address               address,
+  sw_port                       port,
+  sw_const_string               text_record_string,
+  sw_octets                     text_record,
+  sw_ulong                      text_record_len,
+  sw_opaque                     extra)
+{
+  sw_text_record_iterator it;
+
+  if (sw_text_record_iterator_init(&amp;it, text_record, text_record_len) != SW_OKAY)
+  {
+    fprintf(stderr, &quot;init failed\n&quot;);
+    return SW_E_FAIL;
+  }
+				
+  ...
+}</CODE></PRE>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_text_record_iterator_fina"><CODE>sw_text_record_iterator_fina</CODE></A>
+		<P>
+		<HR><A NAME="sw_text_record_iterator_fina"><H3>FUNCTION</H3></A><H2>sw_text_record_iterator_fina</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_text_record_iterator_fina</CODE>(
+   sw_text_record_iterator  iterator)
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>
+		Release all memory resources associated with iterator.  Use of the iterator after calling this function is guaranteed to do something unexpected and undesirable.
+		<P>
+		<H3>EXAMPLE</H3><PRE><CODE>sw_result
+my_resolve_func(
+  sw_discovery_resolve_handler handler,
+  sw_discovery                 discovery,
+  sw_discovery_resolve_id      id,
+  sw_const_string               name,
+  sw_const_string               type,
+  sw_const_string               domain,
+  sw_ipv4_address               address,
+  sw_port                       port,
+  sw_const_string               text_record_string,
+  sw_octets                     text_record,
+  sw_ulong                      text_record_len,
+  sw_opaque                     extra)
+{
+  sw_text_record_iterator it;
+
+  if (sw_text_record_iterator_init(&amp;it, text_record, text_record_len) != SW_OKAY)
+  {
+    fprintf(stderr, &quot;init failed\n&quot;);
+    return SW_E_FAIL;
+  }
+
+  ...
+
+  sw_text_record_iterator_fina(it);
+
+  ...
+}</CODE></PRE>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_text_record_iterator_init"><CODE>sw_text_record_iterator_init</CODE></A>
+		<P>
+		<HR><A NAME="sw_text_record_iterator_next"><H3>FUNCTION</H3></A><H2>sw_text_record_iterator_next</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_text_record_iterator_next</CODE>(
+   sw_text_record_iterator iterator,
+   sw_char                 key[255],
+   sw_octet                val[255],
+   sw_ulong              * val_len)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Get the next key/value duple in the text record.  The value is returned as an opaque data type with a length.  It is up to the developer to handle any and all byte ordering issues.<P>
+<H3>EXAMPLE</H3><PRE><CODE>sw_result
+my_resolve_func(
+  sw_discovery_resolve_handler handler,
+  sw_discovery                 discovery,
+  sw_discovery_resolve_id      id,
+  sw_const_string               name,
+  sw_const_string               type,
+  sw_const_string               domain,
+  sw_ipv4_address               address,
+  sw_port                       port,
+  sw_const_string               text_record_string,
+  sw_octets                     text_record,
+  sw_ulong                      text_record_len,
+  sw_opaque                     extra)
+{
+  sw_text_record_iterator it;
+  sw_char                 key[255];
+  sw_octet                val[255];
+  sw_ulong                val_len;
+
+  if (sw_text_record_iterator_init(&amp;it, text_record, text_record_len) !=- SW_OKAY)
+  {
+    fprintf(stderr, &quot;init failed\n&quot;);
+    return SW_E_FAIL;
+  }
+
+  while (sw_text_record_iterator_next(it, key, val, &amp;val_len) == SW_OKAY)
+  {
+    ...
+  }
+
+  sw_text_record_iterator_fina(it);
+
+  ...
+}</CODE>
+</PRE>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_text_record_iterator_init"><CODE>sw_text_record_iterator_init</CODE></A>, <A HREF="#sw_text_record_iterator_fina"><CODE>sw_text_record_iterator_fina</CODE></A>
+		<P>
+		<HR>
+	</BODY>
+</HTML>
+

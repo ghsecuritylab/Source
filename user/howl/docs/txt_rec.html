@@ -1,0 +1,238 @@
+<HTML>
+<HEAD>
+<TITLE>sw_discovery</TITLE>
+</HEAD>
+<BODY>
+<H1>sw_text_record</H1><H3>OVERVIEW</H3>The sw_text_record functions manage encoding data to a DNS style text record.  Developers need not concern themselves with the underlying representation of this data.
+		
+		<HR>
+		<A NAME="sw_text_record_init"><H3>FUNCTION</H3></A><H2>sw_text_record_init</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_text_record_init</CODE>(
+   sw_text_record * text_record)
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>
+		Creates an empty text record.
+		<p><code>text_record</code>: The text record object</p>
+		<p></p>
+		<H3>EXAMPLE</H3>
+		<PRE><CODE>int func(void)
+{
+   sw_text_record text_record;
+   if (sw_text_record_init(&amp;text_record) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+}
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_text_record_fina"><CODE>sw_text_record_fina</CODE></A>
+		<P>
+		<HR><A NAME="sw_text_record_fina"><H3>FUNCTION</H3></A><H2>sw_text_record_fina</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_text_record_fina</CODE>(
+   sw_text_record  text_record)
+
+</CODE></PRE>
+		<H3>DESCRIPTION</H3>
+		Deallocates all memory resources associated with this text record.  Any attempt to use this text record after this call are undefined.
+		<p><code>text_record</code>: The text record object.</p>
+		<p> </p>
+		<H3>EXAMPLE</H3>
+		<PRE><CODE>int func(void)
+{
+   sw_text_record text_record;
+   
+   if (sw_text_record_init_(&amp;text_record) != SW_OKAY)
+   {
+      fprintf(stderr, "init failed\n");
+      return -1;
+   }
+
+   //
+   // ... use text record
+   //
+
+   sw_text_record_fina(text_record);
+  </CODE>
+</PRE>
+<H3>SEE ALSO</H3>
+		<A HREF="#sw_text_record_init"><CODE>sw_text_record_init</CODE></A>
+		<P>
+		<HR>
+		<H3><a name="sw_text_record_add_string">FUNCTION</a></H3>
+		<H2>sw_text_record_add_string</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_discovery_add_string</CODE>(
+   sw_text_record  text_record,
+   sw_const_string string)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>
+		Adds a new string to the text record.  The string must be in the format specified by DNS text records (e.g.  key|key=|key=val).  The string must be no longer than 255 octets.
+		<p><code>text_record</code>: The text record object.</p>
+		<p><code>string</code>: String to add to text record. UTF-8 encoded.</p>
+		<p></p>
+		<H3>EXAMPLE</H3>
+		<PRE><CODE>...
+
+sw_text_record text_record;
+
+if (sw_text_record_init(&amp;text_record) != SW_OKAY)
+{
+  fprintf(stderr, &quot;init failed\n&quot;);
+  return -1;
+}
+
+if (sw_text_record_add_string(text_record, &quot;Howl Rocks The House&quot;) != SW_OKAY)
+{
+  fprintf(stderr, &quot;add_string failed\n&quot;);
+  return -1;
+}
+
+...
+
+sw_text_record_fina(text_record);
+</CODE>
+</PRE>
+<H3>SEE ALSO</H3><A HREF="#sw_text_record_add_key_and_string_value"><CODE>sw_text_record_add_key_and_string_value</CODE></A>, <A HREF="#sw_text_record_add_key_and_binary_value"><CODE>sw_text_record_add_key_and_binary_value</CODE></A>
+		<P>
+		<HR>
+		<a name="sw_text_record_add_key_and_string_value">
+			<h3>FUNCTION</h3>
+		</a>
+		<h2>sw_text_record_add_key_and_string_value</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_result</code></a>
+<code>sw_text_record_add_key_and_string_value</code>(
+   sw_text_record                        text_record,
+   sw_const_string                       key,
+   sw_const_string                       val)
+   </code></pre>
+		<h3>DESCRIPTION</h3>
+		Adds a new key/value string to the text record.  The parameter 'val' can be NULL.  The combined string lengths of key and val must not exceed 254 octets.
+		<p><code>text_record</code>: The text record object.</p>
+		<p><code>key</code>: A string denoting a lookup key for a value. UTF-8 encoded.</p>
+		<p><code>val</code>: A string denoting the value for this duple. UTF-8 encoded.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre><CODE>...
+
+sw_text_record text_record;
+
+if (sw_text_record_init(&amp;text_record) != SW_OKAY)
+{
+   fprintf(stderr, &quot;init failed\n&quot;);
+   return -1;
+}
+
+if (sw_text_record_add_key_and_string_value(text_record, &quot;Machine ID&quot;, &quot;9782385&quot;) != SW_OKAY)
+{
+   fprintf(stderr, &quot;add_key_and_string_value failed\n&quot;);
+   return -1;
+}
+
+...
+
+sw_text_record_fina(text_record); </CODE>
+</pre>
+		<h3>SEE ALSO</h3>
+		<a href="#sw_text_record_add_string"><code>sw_text_record_add_string</code></a>, <a href="#sw_text_record_add_key_and_binary_value"><code>sw_text_record_add_key_and_binary_value</code></a>
+		<p></p>
+		<hr>
+		<a name="sw_text_record_add_key_and_binary_value">
+			<h3>FUNCTION</h3>
+		</a>
+		<h2>sw_text_record_add_key_and_binary_value</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_result</code></a>
+<code>sw_text_record_add_key_and_binary_value</code>(
+   sw_text_record                   text_record,
+   sw_const_string                  key,
+   sw_octets                        val,
+   sw_ulong                         len)
+</code></pre>
+		<h3>DESCRIPTION</h3>
+		Adds a new string key and binary value string to the text record. The parameter 'val' can be NULL, however in this case len must be 0.  The combined string length of the key and val length must not exceed 254 octets.  Please note that when marshaling binary data, the programmer is responsible for managing any and all byte ordering issues. 
+		<p><code>text_record</code>: The text record object</p>
+		<p><code>key</code>: A string denoting a lookup key for a value. UTF-8 encoded.</p>
+		<p><code>val</code>: A string denoting the value for this duple.</p>
+		<p><code>len</code>: The length of the val described in octets.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre><CODE>...
+
+sw_text_record text_record;
+unsigned long  data;
+
+if (sw_text_record_init(&amp;text_record) != SW_OKAY)
+{
+   fprintf(stderr, &quot;init failed\n&quot;);
+   return -1;
+}
+
+data = 42;
+
+if (sw_text_record_add_key_and_binary_value(text_record, &quot;Machine ID&quot;, (sw_octets) &amp;data, sizeof(data)) != SW_OKAY)
+{
+   fprintf(stderr, &quot;add_key_and_string_value failed\n&quot;);
+   return -1;
+}
+
+...
+
+sw_text_record_fina(text_record); </CODE>
+</pre>
+		<h3>SEE ALSO</h3>
+		<p><a href="#sw_text_record_add_string"><code>sw_text_record_add_string</code></a>, <a href="#sw_text_record_add_key_and_string_value"><code>sw_text_record_add_key_and_string_value</code></a></p>
+		<p></p>
+		<hr>
+		<h3><a name="sw_text_record_bytes">FUNCTION</a></h3>
+		<h2>sw_text_record_bytes</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_octets</code></a>
+<code>sw_text_record_bytes</code>(
+   sw_text_record                      text_record)
+   </code></pre>
+		<h3>DESCRIPTION</h3>
+		Returns a pointer to the byte buffer that holds the encoded text record.  This byte buffer can be used as a parameter to sw_discovery_publish, or sw_discovery_publish_update.
+		<p><code>text_record</code>: The text record object.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre><code>...
+
+sw_octets bytes = sw_text_record_bytes(text_record);
+
+...
+</code>
+</pre>
+		<h3>SEE ALSO</h3>
+		<a href="#sw_text_record_len"><code>sw_text_record_len</code></a>
+		<p></p>
+		<hr>
+		<a name="sw_text_record_len">
+			<h3>FUNCTION</h3>
+		</a>
+		<h2>sw_text_record_len</h2>
+		<h3>SYNOPSIS</h3>
+		<pre><code><a href="#sw_result"><code>sw_ulong</code></a>
+<code>sw_text_record_len</code>(
+   sw_text_record                 text_record)</code></pre>
+		<h3>DESCRIPTION</h3>Returns the length of the encoded text record buffer.  This value can be used as a parameter to sw_discovery_publish, and sw_discovery_publish_update.
+		<p><code>text_record</code>: The text record object.</p>
+		<p></p>
+		<h3>EXAMPLE</h3>
+		<pre>...
+
+sw_ulong = sw_text_record_len(text_record);
+
+</pre>
+		SEE ALSO:
+
+		<p><a href="#sw_text_record_bytes"><code>sw_text_record_bytes</code></a></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+	</BODY>
+</HTML>
+

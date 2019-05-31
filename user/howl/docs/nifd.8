@@ -1,0 +1,30 @@
+.TH NIFD 8 "February 2004" "Howl 0.9.3"
+.SH NAME 
+\fBnifd\fR - network interface monitor daemon
+.SH SYNOPSIS
+\fBnifd\fR [options]
+.SH DESCRIPTION
+The \fBnifd\fR daemon monitors the network interfaces on a host and signals
+\fBautoipd (8)\fR
+and \fBmDNSResponder (8)\fR when an IP address or a link status changes. Only one
+instance of \fBnifd\fR needs to run on a host. Once started, \fBnifd\fR runs continuously.
+\fBnifd\fR is typically launched as follows:
+.SH OPTIONS
+.TP
+.B \-h
+Display brief help message
+.TP
+.B \-v
+Display version information
+.TP
+.B \-d
+Run in debug mode
+.TP
+.B \-n
+On relink, do not run ifdown/ifup
+.TP
+.B \-i
+Set poll interval to \fIseconds\fR
+.SH "SEE ALSO"
+.BR autoip (8),
+.BR mDNSResponder (8)

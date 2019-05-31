@@ -1,0 +1,37 @@
+.TH MDNSRESPONDER 8 "February 2004" "Howl 0.9.3"
+.SH NAME 
+mDNSResponder - mDNS service responder daemon 
+.SH SYNOPSIS
+.BI "mDNSResponder [\-hvd]"
+.LP
+.BI "mDNSResponder [\-d] [\-i " ifname "]
+.br
+.BI "mDNSResponder [\-d] [\-a " address "]
+.br
+.BI "mDNSResponder [\-d] [\-f " file "]
+.SH DESCRIPTION
+The mDNSResponder daemon publishes and browses available services on a link according to
+the IETF Zeronconf (aka "Rendezvous") draft standard. Only one instance of 
+mDNSResponder needs to run on a host. Once started, mDNSResponder runs continuously.  
+.SH OPTIONS
+.TP
+.B \-h
+Display brief help message
+.TP
+.B \-v
+Display version information
+.TP
+.B \-d
+Run in debug mode
+.TP
+.B \-i
+Run only on interface \fIifname.\fR
+.TP
+.B \-a
+Run only on interface bound to \fIaddress.\fR
+.TP
+.B \-f
+Load configuration file specified by \fIfile.\fR
+.SH "SEE ALSO"
+.BR autoip (8),
+.BR nifd (8)

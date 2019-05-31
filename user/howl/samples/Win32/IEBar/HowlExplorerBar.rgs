@@ -1,0 +1,52 @@
+HKCR
+{
+	ExplorerBar.Howl.1 = s 'HowlExplorerBar Class'
+	{
+
+		CLSID = s '{3588080F-0056-4d28-8519-F0479C73D40A}'
+	}
+	ExplorerBar.Howl = s 'HowlExplorerBar Class'
+	{
+		CLSID = s '{3588080F-0056-4d28-8519-F0479C73D40A}'
+		CurVer = s 'ExplorerBar.Howl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3588080F-0056-4d28-8519-F0479C73D40A} = s 'Howl'
+		{
+			ProgID = s 'ExplorerBar.Howl.1'
+			VersionIndependentProgID = s 'ExplorerBar.Howl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+
+
+HKLM
+{ 
+	NoRemove SOFTWARE
+	{
+		NoRemove Microsoft
+		{
+			NoRemove 'Internet Explorer'
+			{
+				NoRemove Extensions 
+				{
+					ForceRemove {6075142B-A95D-4ce7-A50A-120A8D178F88}
+					{
+						val 'CLSID' = s '{E0DD6CAB-2D10-11D2-8F1A-0000F87ABD16}'
+						val 'BandCLSID' = s '{3588080F-0056-4d28-8519-F0479C73D40A}'
+						val 'Default Visible' = s 'Yes'
+						val 'ButtonText' = s 'Howl'
+						val 'Icon'	= s '%MODULE%,208'
+						val 'HotIcon' = s '%MODULE%,208'
+					}
+				}
+			}
+		}
+	}
+}

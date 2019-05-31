@@ -1,0 +1,269 @@
+.SS addrtype
+This module matches packets based on their 
+.B address type.
+Address types are used within the kernel networking stack and categorize
+addresses into various groups.  The exact definition of that group depends on the specific layer three protocol.
+.PP
+The following address types are possible:
+.TP
+.BI "UNSPEC"
+an unspecified address (i.e. 0.0.0.0)
+.TP
+.BI "UNICAST"
+an unicast address
+.TP
+.BI "LOCAL"
+a local address
+.TP
+.BI "BROADCAST"
+a broadcast address
+.TP
+.BI "ANYCAST"
+an anycast packet
+.TP
+.BI "MULTICAST"
+a multicast address
+.TP
+.BI "BLACKHOLE"
+a blackhole address
+.TP
+.BI "UNREACHABLE"
+an unreachable address
+.TP
+.BI "PROHIBIT"
+a prohibited address
+.TP
+.BI "THROW"
+FIXME
+.TP
+.BI "NAT"
+FIXME
+.TP
+.BI "XRESOLVE"
+.TP
+[\fB!\fP] \fB\-\-src\-type\fP \fItype\fP
+Matches if the source address is of given type
+.TP
+[\fB!\fP] \fB\-\-dst\-type\fP \fItype\fP
+Matches if the destination address is of given type
+.TP
+.BI "\-\-limit\-iface\-in"
+The address type checking can be limited to the interface the packet is coming
+in. This option is only valid in the
+.BR PREROUTING ,
+.B INPUT
+and
+.B FORWARD
+chains. It cannot be specified with the
+\fB\-\-limit\-iface\-out\fP
+option.
+.TP
+\fB\-\-limit\-iface\-out\fP
+The address type checking can be limited to the interface the packet is going
+out. This option is only valid in the
+.BR POSTROUTING ,
+.B OUTPUT
+and
+.B FORWARD
+chains. It cannot be specified with the
+\fB\-\-limit\-iface\-in\fP
+option.
+.SS ah
+This module matches the SPIs in Authentication header of IPsec packets.
+.TP
+[\fB!\fP] \fB\-\-ahspi\fP \fIspi\fP[\fB:\fP\fIspi\fP]
+.SS icmp
+This extension can be used if `\-\-protocol icmp' is specified. It
+provides the following option:
+.TP
+[\fB!\fP] \fB\-\-icmp\-type\fP {\fItype\fP[\fB/\fP\fIcode\fP]|\fItypename\fP}
+This allows specification of the ICMP type, which can be a numeric
+ICMP type, type/code pair, or one of the ICMP type names shown by the command
+.nf
+ iptables \-p icmp \-h
+.fi
+.SS ipp2p
+This module matches certain packets in P2P flows. It is not
+designed to match all packets belonging to a P2P connection - 
+use IPP2P together with CONNMARK for this purpose. Also visit
+http://www.ipp2p.org for detailed information.
+
+Use it together with -p tcp or -p udp to search these protocols
+only or without -p switch to search packets of both protocols.
+
+IPP2P provides the following options:
+.TP
+.B "--edk "
+Matches as many eDonkey/eMule packets as possible.
+.TP
+.B "--kazaa "
+Matches as many KaZaA packets as possible.
+.TP
+.B "--gnu "
+Matches as many Gnutella packets as possible.
+.TP
+.B "--dc "
+Matches as many Direct Connect packets as possible.
+.TP
+.B "--bit "
+Matches BitTorrent packets.
+.TP
+.B "--apple "
+Matches AppleJuice packets.
+.TP
+.B "--soul "
+Matches some SoulSeek packets. Considered as beta, use careful!
+.TP
+.B "--winmx "
+Matches some WinMX packets. Considered as beta, use careful!
+.TP
+.B "--ares "
+Matches Ares and AresLite packets. Use together with -j DROP only.
+.TP
+.B "--ipp2p "
+Short hand for: --edk --kazaa --gnu --dc
+.TP
+.B "--debug "
+Prints some information about each hit into kernel logfile. May 
+produce huge logfiles so beware!
+.SS multiport
+This module matches a set of source or destination ports.  Up to 15
+ports can be specified.  A port range (port:port) counts as two
+ports.  It can only be used in conjunction with
+\fB\-p tcp\fP
+or
+\fB\-p udp\fP.
+.TP
+[\fB!\fP] \fB\-\-source\-ports\fP,\fB\-\-sports\fP \fIport\fP[\fB,\fP\fIport\fP|\fB,\fP\fIport\fP\fB:\fP\fIport\fP]...
+Match if the source port is one of the given ports.  The flag
+\fB\-\-sports\fP
+is a convenient alias for this option. Multiple ports or port ranges are
+separated using a comma, and a port range is specified using a colon.
+\fB53,1024:65535\fP would therefore match ports 53 and all from 1024 through
+65535.
+.TP
+[\fB!\fP] \fB\-\-destination\-ports\fP,\fB\-\-dports\fP \fIport\fP[\fB,\fP\fIport\fP|\fB,\fP\fIport\fP\fB:\fP\fIport\fP]...
+Match if the destination port is one of the given ports.  The flag
+\fB\-\-dports\fP
+is a convenient alias for this option.
+.TP
+[\fB!\fP] \fB\-\-ports\fP \fIport\fP[\fB,\fP\fIport\fP|\fB,\fP\fIport\fP\fB:\fP\fIport\fP]...
+Match if either the source or destination ports are equal to one of
+the given ports.
+.SS realm
+This matches the routing realm.  Routing realms are used in complex routing
+setups involving dynamic routing protocols like BGP.
+.TP
+[\fB!\fP] \fB\-\-realm\fP \fIvalue\fP[\fB/\fP\fImask\fP]
+Matches a given realm number (and optionally mask). If not a number, value
+can be a named realm from /etc/iproute2/rt_realms (mask can not be used in
+that case).
+.SS state
+This module, when combined with connection tracking, allows access to
+the connection tracking state for this packet.
+.TP
+[\fB!\fP] \fB\-\-state\fP \fIstate\fP
+Where state is a comma separated list of the connection states to
+match.  Possible states are
+.B INVALID
+meaning that the packet could not be identified for some reason which
+includes running out of memory and ICMP errors which don't correspond to any
+known connection,
+.B ESTABLISHED
+meaning that the packet is associated with a connection which has seen
+packets in both directions,
+.B NEW
+meaning that the packet has started a new connection, or otherwise
+associated with a connection which has not seen packets in both
+directions, and
+.B RELATED
+meaning that the packet is starting a new connection, but is
+associated with an existing connection, such as an FTP data transfer,
+or an ICMP error.
+.B UNTRACKED
+meaning that the packet is not tracked at all, which happens if you use
+the NOTRACK target in raw table.
+.SS tcp
+These extensions can be used if `\-\-protocol tcp' is specified. It
+provides the following options:
+.TP
+[\fB!\fP] \fB\-\-source\-port\fP,\fB\-\-sport\fP \fIport\fP[\fB:\fP\fIport\fP]
+Source port or port range specification. This can either be a service
+name or a port number. An inclusive range can also be specified,
+using the format \fIfirst\fP\fB:\fP\fIlast\fP.
+If the first port is omitted, "0" is assumed; if the last is omitted,
+"65535" is assumed.
+If the first port is greater than the second one they will be swapped.
+The flag
+\fB\-\-sport\fP
+is a convenient alias for this option.
+.TP
+[\fB!\fP] \fB\-\-destination\-port\fP,\fB\-\-dport\fP \fIport\fP[\fB:\fP\fIport\fP]
+Destination port or port range specification.  The flag
+\fB\-\-dport\fP
+is a convenient alias for this option.
+.TP
+[\fB!\fP] \fB\-\-tcp\-flags\fP \fImask\fP \fIcomp\fP
+Match when the TCP flags are as specified.  The first argument \fImask\fP is the
+flags which we should examine, written as a comma-separated list, and
+the second argument \fIcomp\fP is a comma-separated list of flags which must be
+set.  Flags are:
+.BR "SYN ACK FIN RST URG PSH ALL NONE" .
+Hence the command
+.nf
+ iptables \-A FORWARD \-p tcp \-\-tcp\-flags SYN,ACK,FIN,RST SYN
+.fi
+will only match packets with the SYN flag set, and the ACK, FIN and
+RST flags unset.
+.TP
+[\fB!\fP] \fB\-\-syn\fP
+Only match TCP packets with the SYN bit set and the ACK,RST and FIN bits
+cleared.  Such packets are used to request TCP connection initiation;
+for example, blocking such packets coming in an interface will prevent
+incoming TCP connections, but outgoing TCP connections will be
+unaffected.
+It is equivalent to \fB\-\-tcp\-flags SYN,RST,ACK,FIN SYN\fP.
+If the "!" flag precedes the "\-\-syn", the sense of the
+option is inverted.
+.TP
+[\fB!\fP] \fB\-\-tcp\-option\fP \fInumber\fP
+Match if TCP option set.
+.SS tos
+This module matches the 8 bits of Type of Service field in the IP
+header (ie. including the precedence bits).
+.TP
+.BI "--tos " "tos"
+The argument is either a standard name, (use
+.br
+ iptables -m tos -h
+.br
+to see the list), or a numeric value to match.
+.SS ttl
+This module matches the time to live field in the IP header.
+.TP
+[\fB!\fP] \fB\-\-ttl\-eq\fP \fIttl\fP
+Matches the given TTL value.
+.TP
+\fB\-\-ttl\-gt\fP \fIttl\fP
+Matches if TTL is greater than the given TTL value.
+.TP
+\fB\-\-ttl\-lt\fP \fIttl\fP
+Matches if TTL is less than the given TTL value.
+.SS udp
+These extensions can be used if `\-\-protocol udp' is specified. It
+provides the following options:
+.TP
+[\fB!\fP] \fB\-\-source\-port\fP,\fB\-\-sport\fP \fIport\fP[\fB:\fP\fIport\fP]
+Source port or port range specification.
+See the description of the
+\fB\-\-source\-port\fP
+option of the TCP extension for details.
+.TP
+[\fB!\fP] \fB\-\-destination\-port\fP,\fB\-\-dport\fP \fIport\fP[\fB:\fP\fIport\fP]
+Destination port or port range specification.
+See the description of the
+\fB\-\-destination\-port\fP
+option of the TCP extension for details.
+.SS unclean
+This module takes no options, but attempts to match packets which seem
+malformed or unusual.  This is regarded as experimental.

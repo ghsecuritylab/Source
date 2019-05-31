@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<TITLE>sw_ipv4_address</TITLE>
+</HEAD>
+<BODY>
+<H1>sw_ipv4_address</H1><H3>OVERVIEW</H3><CODE>sw_ipv4_address</CODE> is a data type that represents an IP address.
+<P>
+<HR><A NAME="sw_ipv4_address_any"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_any</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_ipv4_address
+<CODE>sw_ipv4_address_any</CODE>()
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Returns an sw_ipv4_address representing IN_ADDR_ANY (an IP address consisting of all zeros).
+<P>
+<HR><A NAME="sw_ipv4_address_loopback"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_loopback</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_ipv4_address
+<CODE>sw_ipv4_address_loopback</CODE>()
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Returns an sw_ipv4_address representing the loopback address: 127.0.0.1.
+<P>
+<HR><A NAME="sw_ipv4_address_init"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_init</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_init</CODE>(sw_ipv4_address *self)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Initialize an empty sw_ipv4_address object.<P>
+<HR><A NAME="sw_ipv4_address_init_from_saddr"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_init_from_saddr</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_init_from_saddr</CODE>(
+   sw_ipv4_address *self,
+   sw_saddr    saddr)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Creates a new <CODE>sw_ipv4_address</CODE> at <CODE>self</CODE>. <CODE>saddr</CODE> is a ulong representing the IP address in a format such that 0x01020304 would lead to an IP address of 1.2.3.4.
+<P>
+<HR><A NAME="sw_ipv4_address_init_from_name"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_init_from_name</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_init_from_name</CODE>(
+   sw_ipv4_address      *self,
+   const sw_string  name)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Creates a new <CODE>sw_ipv4_address</CODE> at <CODE>self</CODE>. <CODE>name</CODE> is a string representing the IP address in "dot" format: for example, "127.0.0.1".
+<P>
+<HR><A NAME="sw_ipv4_address_init_from_address"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_init_from_address</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_init_from_address</CODE>(
+   sw_ipv4_address *self,
+   sw_ipv4_address  addr)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Creates a new <CODE>sw_ipv4_address</CODE> at <CODE>self</CODE>, which is an exact copy of <CODE>addr</CODE>.
+<P>
+<HR><A NAME="sw_ipv4_address_init_from_this_host"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_init_from_this_host</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_init_from_this_host</CODE>(sw_ipv4_address *self)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Creates a new <CODE>sw_ipv4_address</CODE> at <CODE>self</CODE>, containing the IP address of the local host.
+<P>
+If the local host is a multi-address host, the particular IP address is determined randomly.
+<P>
+<HR><A NAME="sw_ipv4_address_fina"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_fina</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_fina</CODE>(sw_ipv4_address self)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Frees any resources associated with <CODE>self</CODE>.  Equivalent to a destructor in an object-oriented language.  After <CODE>sw_ipv4_address_fina</CODE> has been called, it is safe to free the memory occupied by <CODE>self</CODE>.
+<P>
+<HR><A NAME="sw_ipv4_address_is_any"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_is_any</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_bool
+<CODE>sw_ipv4_address_is_any</CODE>(sw_ipv4_address self)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Returns true iff <CODE>self</CODE> represents the IN_ADDR_ANY address (all zeros).
+<P>
+<HR><A NAME="sw_ipv4_address_saddr"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_saddr</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_saddr
+<CODE>sw_ipv4_address_saddr</CODE>(sw_ipv4_address self)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Returns a ulong representing the IP address contained in <CODE>self</CODE>.
+<P>
+<HR><A NAME="sw_ipv4_address_name"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_name</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_string
+<CODE>sw_ipv4_address_name</CODE>(
+   sw_ipv4_address  self,
+   sw_string   name,
+   sw_ulong    len)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Stores at <CODE>name</CODE> an ASCII representation of the IP address contained in <CODE>self</CODE>, in "dot" format: "127.0.0.1".
+<P>
+<CODE>name</CODE> is where to store the string. <CODE>len</CODE> is the number of bytes available at <CODE>name</CODE>, including the null terminator.
+<P>
+Returns <CODE>name</CODE>.
+<P>
+<HR><A NAME="sw_ipv4_address_decompose"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_decompose</H2><H3>SYNOPSIS</H3><PRE><CODE><A HREF="discovery.html#sw_result"><CODE>sw_result</CODE></A>
+<CODE>sw_ipv4_address_decompose</CODE>(
+   sw_ipv4_address  self,
+   sw_octet   *a1,
+   sw_octet   *a2,
+   sw_octet   *a3,
+   sw_octet   *a4)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Stores four bytes representing the IP address contained in <CODE>self</CODE>.
+<P>
+<HR><A NAME="sw_ipv4_address_equals"><H3>FUNCTION</H3></A><H2>sw_ipv4_address_equals</H2><H3>SYNOPSIS</H3><PRE><CODE>sw_bool
+<CODE>sw_ipv4_address_equals</CODE>(
+   sw_ipv4_address  self,
+   sw_ipv4_address  addr)
+</CODE></PRE>
+<H3>DESCRIPTION</H3>Returns true iff <CODE>self</CODE> and <CODE>addr</CODE> represent the same IP address.
+<P>
+</BODY>
+</HTML>
+

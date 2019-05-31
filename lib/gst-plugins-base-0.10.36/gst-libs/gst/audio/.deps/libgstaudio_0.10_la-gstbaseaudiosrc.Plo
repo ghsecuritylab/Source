@@ -1,0 +1,650 @@
+libgstaudio_0.10_la-gstbaseaudiosrc.lo \
+  libgstaudio_0.10_la-gstbaseaudiosrc.o: gstbaseaudiosrc.c \
+  ../../../config.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h \
+  gstbaseaudiosrc.h /usr/local/include/gstreamer-0.10/gst/gst.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glib.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/galloca.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtypes.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glibconfig.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmacros.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/garray.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gasyncqueue.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gthread.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gerror.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gquark.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gutils.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gatomic.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbacktrace.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbase64.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbitlock.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbookmarkfile.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gcache.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glist.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmem.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gslice.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gchecksum.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gcompletion.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gconvert.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdataset.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdate.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdatetime.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtimezone.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdir.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gfileutils.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghash.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghook.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghostutils.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/giochannel.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmain.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gpoll.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gslist.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gstring.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gunicode.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gkeyfile.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmappedfile.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmarkup.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmessages.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gnode.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/goption.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gpattern.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gprimes.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gqsort.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gqueue.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/grand.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/grel.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gregex.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gscanner.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gsequence.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gshell.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gspawn.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gstrfuncs.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtestutils.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gthreadpool.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtimer.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtree.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gurifuncs.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gvarianttype.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gvariant.h \
+  /usr/local/include/gstreamer-0.10/gst/glib-compat.h \
+  /usr/local/include/gstreamer-0.10/gst/gstenumtypes.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glib-object.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gbinding.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gobject.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtype.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvalue.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gparam.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gclosure.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gsignal.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gmarshal.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gboxed.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/genums.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gparamspecs.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gsourceclosure.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtypemodule.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtypeplugin.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvaluearray.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvaluetypes.h \
+  /usr/local/include/gstreamer-0.10/gst/gstversion.h \
+  /usr/local/include/gstreamer-0.10/gst/gstatomicqueue.h \
+  /usr/local/include/gstreamer-0.10/gst/gstbin.h \
+  /usr/local/include/gstreamer-0.10/gst/gstelement.h \
+  /usr/local/include/gstreamer-0.10/gst/gstconfig.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/parser.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlversion.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlexports.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/tree.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdio.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_stdio.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/wchar.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/wchar.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stdio_lim.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlstring.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlregexp.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/dict.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/hash.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/valid.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlerror.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/list.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlautomata.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/entities.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/encoding.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlIO.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/globals.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/SAX.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdlib.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/alloca.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xlink.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/SAX2.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlmemory.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/threads.h \
+  /usr/local/include/gstreamer-0.10/gst/gstobject.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpad.h \
+  /usr/local/include/gstreamer-0.10/gst/gstbuffer.h \
+  /usr/local/include/gstreamer-0.10/gst/gstminiobject.h \
+  /usr/local/include/gstreamer-0.10/gst/gstclock.h \
+  /usr/local/include/gstreamer-0.10/gst/gstcaps.h \
+  /usr/local/include/gstreamer-0.10/gst/gststructure.h \
+  /usr/local/include/gstreamer-0.10/gst/gstdatetime.h \
+  /usr/local/include/gstreamer-0.10/gst/gstbufferlist.h \
+  /usr/local/include/gstreamer-0.10/gst/gstevent.h \
+  /usr/local/include/gstreamer-0.10/gst/gstformat.h \
+  /usr/local/include/gstreamer-0.10/gst/gstiterator.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttaglist.h \
+  /usr/local/include/gstreamer-0.10/gst/gstquery.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttask.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttaskpool.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpadtemplate.h \
+  /usr/local/include/gstreamer-0.10/gst/gstbus.h \
+  /usr/local/include/gstreamer-0.10/gst/gstmessage.h \
+  /usr/local/include/gstreamer-0.10/gst/gstelementfactory.h \
+  /usr/local/include/gstreamer-0.10/gst/gstplugin.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/stat.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stat.h \
+  /source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gmodule/gmodule.h \
+  /usr/local/include/gstreamer-0.10/gst/gstmacros.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpluginfeature.h \
+  /usr/local/include/gstreamer-0.10/gst/gstindex.h \
+  /usr/local/include/gstreamer-0.10/gst/gstindexfactory.h \
+  /usr/local/include/gstreamer-0.10/gst/gstchildproxy.h \
+  /usr/local/include/gstreamer-0.10/gst/gstdebugutils.h \
+  /usr/local/include/gstreamer-0.10/gst/gsterror.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/errno.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno_values.h \
+  /usr/local/include/gstreamer-0.10/gst/gstghostpad.h \
+  /usr/local/include/gstreamer-0.10/gst/gstinfo.h \
+  /usr/local/include/gstreamer-0.10/gst/gstinterface.h \
+  /usr/local/include/gstreamer-0.10/gst/gstmarshal.h \
+  /usr/local/include/gstreamer-0.10/gst/gstparamspecs.h \
+  /usr/local/include/gstreamer-0.10/gst/gstvalue.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpipeline.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpoll.h \
+  /usr/local/include/gstreamer-0.10/gst/gstpreset.h \
+  /usr/local/include/gstreamer-0.10/gst/gstregistry.h \
+  /usr/local/include/gstreamer-0.10/gst/gstsegment.h \
+  /usr/local/include/gstreamer-0.10/gst/gstsystemclock.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttagsetter.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttrace.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttypefind.h \
+  /usr/local/include/gstreamer-0.10/gst/gsttypefindfactory.h \
+  /usr/local/include/gstreamer-0.10/gst/gsturi.h \
+  /usr/local/include/gstreamer-0.10/gst/gstutils.h \
+  /usr/local/include/gstreamer-0.10/gst/gstparse.h \
+  /usr/local/include/gstreamer-0.10/gst/gstxml.h \
+  /usr/local/include/gstreamer-0.10/gst/gstcompat.h \
+  /usr/local/include/gstreamer-0.10/gst/base/gstpushsrc.h \
+  /usr/local/include/gstreamer-0.10/gst/base/gstbasesrc.h gstringbuffer.h \
+  gstaudioclock.h ../../../gst-libs/gst/gst-i18n-plugin.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/locale.h \
+  /opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_locale.h \
+  ../../../gst-libs/gst/gettext.h
+
+../../../config.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/string.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/features.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_config.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/cdefs.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stddef.h:
+
+gstbaseaudiosrc.h:
+
+/usr/local/include/gstreamer-0.10/gst/gst.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glib.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/galloca.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtypes.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glibconfig.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmacros.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/limits.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/syslimits.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/limits.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix1_lim.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/local_lim.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/linux/limits.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/posix2_lim.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/float.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/time.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/time.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/types.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/kernel_types.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/pthreadtypes.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sched.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/garray.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gasyncqueue.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gthread.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gerror.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/include/stdarg.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gquark.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gutils.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gatomic.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbacktrace.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/signal.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigset.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/signum.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/siginfo.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigaction.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigcontext.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/asm/sigcontext.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigstack.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/sigthread.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbase64.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbitlock.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gbookmarkfile.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gcache.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glist.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmem.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gslice.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gchecksum.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gcompletion.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gconvert.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdataset.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdate.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdatetime.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtimezone.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gdir.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gfileutils.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghash.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghook.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/ghostutils.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/giochannel.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmain.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gpoll.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gslist.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gstring.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gunicode.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gkeyfile.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmappedfile.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmarkup.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gmessages.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gnode.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/goption.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gpattern.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gprimes.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gqsort.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gqueue.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/grand.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/grel.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gregex.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gscanner.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gsequence.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gshell.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gspawn.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gstrfuncs.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtestutils.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gthreadpool.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtimer.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gtree.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gurifuncs.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gvarianttype.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/gvariant.h:
+
+/usr/local/include/gstreamer-0.10/gst/glib-compat.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstenumtypes.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/glib/glib-object.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gbinding.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gobject.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtype.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvalue.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gparam.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gclosure.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gsignal.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gmarshal.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gboxed.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/genums.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gparamspecs.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gsourceclosure.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtypemodule.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gtypeplugin.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvaluearray.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gobject/gvaluetypes.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstversion.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstatomicqueue.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstbin.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstelement.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstconfig.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/parser.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlversion.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlexports.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/tree.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdio.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_stdio.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/wchar.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/wchar.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stdio_lim.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlstring.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlregexp.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/dict.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/hash.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/valid.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlerror.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/list.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlautomata.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/entities.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/encoding.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlIO.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/globals.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/SAX.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/stdlib.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/types.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/endian.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/endian.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/select.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/select.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/sysmacros.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/alloca.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xlink.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/SAX2.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/xmlmemory.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../libxml2-2.8.0/include/libxml/threads.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstobject.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpad.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstbuffer.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstminiobject.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstclock.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstcaps.h:
+
+/usr/local/include/gstreamer-0.10/gst/gststructure.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstdatetime.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstbufferlist.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstevent.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstformat.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstiterator.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttaglist.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstquery.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttask.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttaskpool.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpadtemplate.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstbus.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstmessage.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstelementfactory.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstplugin.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/sys/stat.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/stat.h:
+
+/source/Release/RP-N53/GPL/lib/gst-plugins-base-0.10.36/../glib-2.28.0/gmodule/gmodule.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstmacros.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpluginfeature.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstindex.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstindexfactory.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstchildproxy.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstdebugutils.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsterror.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/errno.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/errno_values.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstghostpad.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstinfo.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstinterface.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstmarshal.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstparamspecs.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstvalue.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpipeline.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpoll.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstpreset.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstregistry.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstsegment.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstsystemclock.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttagsetter.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttrace.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttypefind.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsttypefindfactory.h:
+
+/usr/local/include/gstreamer-0.10/gst/gsturi.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstutils.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstparse.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstxml.h:
+
+/usr/local/include/gstreamer-0.10/gst/gstcompat.h:
+
+/usr/local/include/gstreamer-0.10/gst/base/gstpushsrc.h:
+
+/usr/local/include/gstreamer-0.10/gst/base/gstbasesrc.h:
+
+gstringbuffer.h:
+
+gstaudioclock.h:
+
+../../../gst-libs/gst/gst-i18n-plugin.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/locale.h:
+
+/opt/buildroot-gcc342-bk/bin/../lib/gcc/mipsel-linux-uclibc/3.4.2/../../../../mipsel-linux-uclibc/sys-include/bits/uClibc_locale.h:
+
+../../../gst-libs/gst/gettext.h:
