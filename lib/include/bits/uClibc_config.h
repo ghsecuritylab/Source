@@ -150,7 +150,7 @@
  * Big and Tall
  */
 #define __UCLIBC_HAS_REGEX__ 1
-#undef __UCLIBC_HAS_WORDEXP__
+#define __UCLIBC_HAS_WORDEXP__ 1
 #undef __UCLIBC_HAS_FTW__
 #define __UCLIBC_HAS_GLOB__ 1
 

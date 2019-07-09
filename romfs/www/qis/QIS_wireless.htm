@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--[if !(IE 7)]><!--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><!--<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<link type="text/css" rel="stylesheet" href="/form_style.css">
+<link type="text/css" rel="stylesheet" href="qis_style.css">
+<script type="text/javascript" src="/state.js"></script>
+<script type="text/javascript" src="/help.js"></script>
+<script type="text/javascript" src="/qis/QIS_general.js"></script>
+<script>
+var sw_mode = parent.document.QKform.sw_mode.value;
+
+function QKWireless_load_body(){
+	parent.set_step("t2");
+	if (band5g_support != -1) {
+		document.getElementById("qis_2g_th1").style.display = "";
+		document.getElementById("qis_2g_th2").style.display = "";
+		document.getElementById("qis_5g_tr").style.display = "";
+		document.getElementById("qis_ssid_tr").style.display = "";
+		document.getElementById("qis_key_tr").style.display = "";
+	}
+	if (nonconcurrent_support != -1)
+		document.getElementById("qis_freq_div").style.display = "";
+
+	document.form.wl0_ssid.value = decodeURIComponent(parent.document.QKform.wl0_ssid2.value);
+	document.form.wl0_wpa_psk.value = decodeURIComponent(parent.document.QKform.wl0_wpa_psk.value);
+	parent.document.QKform.wl0_nmode_x.value = "0";
+	document.form.wl1_ssid.value = decodeURIComponent(parent.document.QKform.wl1_ssid2.value);
+	document.form.wl1_wpa_psk.value = decodeURIComponent(parent.document.QKform.wl1_wpa_psk.value);
+	parent.document.QKform.wl1_nmode_x.value = "0";
+
+	change_setting_img(sw_mode, "wireless");
+
+	if (sw_mode == 1 || qis_opmode_support != -1)
+		document.getElementById("qis_prev_btn").style.display = "";
+}
+
+function freq_setting(n){
+	parent.document.QKform.cur_freq.value = n;
+}
+
+function chk_wl_setting(){
+	/* SSID */
+	if (document.form.wl0_ssid.value.length == 0) {
+		document.form.wl0_ssid.focus();
+		return false;
+	}
+	if (document.form.wl1_ssid.value.length == 0) {
+		document.form.wl1_ssid.focus();
+		return false;
+	}
+	parent.document.QKform.wl0_ssid2.value = document.form.wl0_ssid.value;
+	parent.document.QKform.wl1_ssid2.value = document.form.wl1_ssid.value;
+	if (document.form.wl0_wpa_psk.value.length > 0) {
+		if (!validate_psk(document.form.wl0_wpa_psk)) return false;
+		parent.document.QKform.wl0_auth_mode_x.value = "psk";
+		parent.document.QKform.wl0_wpa_mode.value = "2";
+		parent.document.QKform.wl0_crypto.value = "aes";
+		parent.document.QKform.wl0_wpa_psk.value = document.form.wl0_wpa_psk.value;
+	} else {// OPEN-NONE
+		parent.document.QKform.wl0_auth_mode_x.value = "open";
+		parent.document.QKform.wl0_wpa_psk.value = "";
+	}
+
+	if (document.form.wl1_wpa_psk.value.length > 0) {
+		if (!validate_psk(document.form.wl1_wpa_psk)) return false;
+		parent.document.QKform.wl1_auth_mode_x.value = "psk";
+		parent.document.QKform.wl1_wpa_mode.value = "2";
+		parent.document.QKform.wl1_crypto.value = "aes";
+		parent.document.QKform.wl1_wpa_psk.value = document.form.wl1_wpa_psk.value;
+	} else {// OPEN-NONE
+		parent.document.QKform.wl1_auth_mode_x.value = "open";
+		parent.document.QKform.wl1_wpa_psk.value = "";
+	}
+
+	return true;
+}
+
+function Sync_2ghz(band){
+	if (band == 2) {
+		if (document.form.sync_with_2ghz.checked == true) {
+			document.form.wl1_ssid.value = document.form.wl0_ssid.value;
+			document.form.wl1_wpa_psk.value = document.form.wl0_wpa_psk.value;
+		}
+	} else
+		document.form.sync_with_2ghz.checked = false;
+}
+
+function gotoPrev(){
+	if (sw_mode == 1) {
+		var wan_proto = parent.document.QKform.wan_proto.value;
+		if (wan_proto == 'pppoe')
+			document.form.prev_page.value = "QIS_internet_account.htm";
+		else
+			document.form.prev_page.value = "QIS_internet_ip.htm";
+	} else
+		document.form.prev_page.value = "QIS_opmode.htm";
+	location.href = document.form.prev_page.value;
+}
+
+function gotoNext(){
+	if (!chk_wl_setting()) return false;
+	document.form.submit();
+}
+</script>
+</head>
+
+<body onLoad="QKWireless_load_body();" onunload="" onKeyPress="submitenter(this,event)">
+<form method="post" name="form" action="/qis/QIS_finish.htm" target="">
+<input type="hidden" name="prev_page" value="">
+<input type="hidden" name="current_page" value="QIS_wireless.htm">
+<input type="hidden" name="flag" value="">
+<div class="QISmain">
+  <div class="QISformfonttitle"><#QIS_wireless_webtitle#>
+	<img id="smaill_flow_1" src="/images/small_flow/flow01.png" class="small_img_1">
+	<img id="smaill_flow_2" src="/images/small_flow/flow-wire.png" class="small_img_2">
+	<img id="smaill_flow_3" src="/images/small_flow/flow02.png" class="small_img_3">
+	<img id="smaill_flow_4" src="/images/small_flow/setting.gif" class="small_img_4">
+	<img id="smaill_flow_5" src="/images/small_flow/flow03-2.png" class="small_img_5">
+	<img onclick="parent.gotoIndex();" align="right" style="cursor:pointer;margin:-10px -20px 10px 5px; *margin-top:-25px;" title="<#CTL_Setting#>" src="/images/backtohome.png" onMouseOver="this.src='/images/backtohomeclick.png'" onMouseOut="this.src='/images/backtohome.png'">
+  </div>
+  <div style="margin-left:5px;margin-top:10px;margin-bottom:10px"><img style="width: 700px; height: 2px;" src="/images/New_ui/export/line_export.png"></div>
+
+  <div class="QISGeneralFont" style="font-weight:bold;"><#QIS_wireless_decs1#></div>
+
+  <table class="QISform_wireless" style="margin-top:30px;" width="400" border=0 align="center" cellpadding="5" cellspacing="0">
+	<tr>
+	  <th id="qis_2g_th1" width="50" style="display:none;">2.4GHz</th>
+	  <th width="180"><span onmouseout="return nd();" onclick="openHint(0, 22);change_hint_img(document.getElementById('hc0_img'));" style="cursor:help;"><#QIS_SSID#><img align="right" style="cursor:pointer;margin-top:-14px\9;" src="/images/New_ui/helpicon.png"></span></th>
+	  <td class="QISformtd"><input type="text" id="wl0_ssid" name="wl0_ssid" onkeypress="return is_string(this);" onkeyup="Sync_2ghz(2);" style="height:25px;" class="input_32_table" maxlength="32" size="34" value="default"/>
+	  </td>
+	</tr>
+	<tr>
+	  <th id="qis_2g_th2" width="50" style="display:none;"></th>
+	  <th width="180"><span onmouseout="return nd();" onclick="openHint(0, 23);" style="cursor:help;"><#QIS_Security_Key#><img align="right" style="cursor:pointer;margin-top:-14px\9;" src="/images/New_ui/helpicon.png"></span></th>
+	  <td class="QISformtd"><input type="password" id="wl0_wpa_psk" name="wl0_wpa_psk" value="<% nvram_char_to_ascii("wl0_wpa_psk"); %>" onkeyup="Sync_2ghz(2);" onBlur="switchType(this, false);" onFocus="switchType(this, true);" style="height:25px;" class="input_32_table" maxlength="64" size="34"></td>
+	</tr>
+
+	<tr id="qis_5g_tr" style="display:none;">
+	  <th width="50"></th>
+	  <th width="180"></th>
+	  <td class="QISformtd"><span id="syncCheckbox"><input type="checkbox" id="sync_with_2ghz" name="sync_with_2ghz" class="input" onclick="setTimeout('Sync_2ghz(2);',0);"><#qis_ssid_desc#></span></td>
+	</tr>
+	<tr id="qis_ssid_tr" style="display:none;">
+	  <th width="50">5GHz</th>
+	  <th width="180"><span onmouseout="return nd();" onclick="openHint(0, 22);change_hint_img(document.getElementById('hc0_img'));" style="cursor:help;"><#QIS_SSID#><img align="right" style="cursor:pointer;margin-top:-14px\9;" src="/images/New_ui/helpicon.png"></span></th>
+	  <td class="QISformtd"><input type="text" id="wl1_ssid" name="wl1_ssid" onkeypress="return is_string(this);" onkeyup="Sync_2ghz(5);" style="height:25px;" class="input_32_table" maxlength="32" size="34" value="default"/></td>
+	</tr>
+	<tr id="qis_key_tr" style="display:none;">
+	  <th width="50"></th>
+	  <th width="180"><span onmouseout="return nd();" onclick="openHint(0, 23);" style="cursor:help;"><#QIS_Security_Key#><img align="right" style="cursor:pointer;margin-top:-14px\9;" src="/images/New_ui/helpicon.png"></span></th>
+	  <td class="QISformtd"><input type="password" id="wl1_wpa_psk" name="wl1_wpa_psk" value="<% nvram_char_to_ascii("wl1_wpa_psk"); %>" onkeyup="Sync_2ghz(5);" onBlur="switchType(this, false);" onFocus="switchType(this, true);" style="height:25px;" class="input_32_table" maxlength="64" size="34"></td>
+	</tr>
+  </table>
+
+  <div id="qis_freq_div" style="margin-top:10px;margin-left:250px;display:none;">
+	<input type="radio" name="freq" onclick="freq_setting(0);" <% nvram_match("cur_freq", "0", "checked"); %>><#QIS_wireless_2G#>
+	<input type="radio" name="freq" onclick="freq_setting(1);" <% nvram_match("cur_freq", "1", "checked"); %>><#QIS_wireless_5G#>
+  </div>
+  <div class="QISGeneralFont" style="margin-top:15px;"><#QIS_wireless_setting_skdesc0#><#QIS_wireless_setting_skdesc1#></div><br/>
+
+  <div class="apply_gen" style="margin-top:10px">
+	<input id="qis_prev_btn" style="display:none;" class="button_gen" type="button" value="<#CTL_prev#>" onclick="gotoPrev();">
+	<input class="button_gen" type="button" value="<#CTL_next#>" onclick="gotoNext();">
+  </div>
+</div>
+</form>
+</body>
+</html>

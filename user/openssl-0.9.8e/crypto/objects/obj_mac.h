@@ -1,19 +1,3 @@
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2 of
- * the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
- */
 /* crypto/objects/obj_mac.h */
 
 /* THIS FILE IS GENERATED FROM objects.txt by objects.pl via the
@@ -287,8 +271,6 @@
 
 #define OBJ_X9_62_primeCurve		OBJ_X9_62_ellipticCurve,1L
 
-#define OBJ_X9_62_primeCurve_cn	OBJ_member_body,156L,11235L,1L,1L,2L
-
 #define SN_X9_62_prime192v1		"prime192v1"
 #define NID_X9_62_prime192v1		409
 #define OBJ_X9_62_prime192v1		OBJ_X9_62_primeCurve,1L
@@ -318,8 +300,6 @@
 #define OBJ_X9_62_prime256v1		OBJ_X9_62_primeCurve,7L
 
 #define OBJ_X9_62_id_ecSigType		OBJ_ansi_X9_62,4L
-#define OBJ_X9_62_id_ecSigType_cn	OBJ_member_body,156L,11235L,1L,1L
-
 
 #define SN_ecdsa_with_SHA1		"ecdsa-with-SHA1"
 #define NID_ecdsa_with_SHA1		416
@@ -3425,12 +3405,4 @@
 #define SN_camellia_256_cfb8		"CAMELLIA-256-CFB8"
 #define LN_camellia_256_cfb8		"camellia-256-cfb8"
 #define NID_camellia_256_cfb8		765
-
-#define SN_ecdsa_with_SHA256		"ecdsa-with-SHA256"
-#define NID_ecdsa_with_SHA256		772
-#define OBJ_ecdsa_with_SHA256		OBJ_X9_62_id_ecSigType_cn,1L 
-
-#define SN_X9_62_prime192v4		"prime192v4"
-#define NID_X9_62_prime192v4		773
-#define OBJ_X9_62_prime192v4		OBJ_X9_62_primeCurve_cn,1L
 

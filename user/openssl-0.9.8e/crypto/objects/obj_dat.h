@@ -1,19 +1,3 @@
-/*
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2 of
- * the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
- */
 /* crypto/objects/obj_dat.h */
 
 /* THIS FILE IS GENERATED FROM objects.h by obj_dat.pl via the
@@ -78,12 +62,12 @@
  * [including the GNU Public Licence.]
  */
 
-#define NUM_NID 774
-#define NUM_SN 770
-#define NUM_LN 770
-#define NUM_OBJ 726
+#define NUM_NID 772
+#define NUM_SN 768
+#define NUM_LN 768
+#define NUM_OBJ 724
 
-static unsigned char lvalues[5133]={
+static unsigned char lvalues[5116]={
 0x00,                                        /* [  0] OBJ_undef */
 0x2A,0x86,0x48,0x86,0xF7,0x0D,               /* [  1] OBJ_rsadsi */
 0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,          /* [  7] OBJ_pkcs */
@@ -808,8 +792,6 @@ static unsigned char lvalues[5133]={
 0x55,0x1D,0x09,                              /* [5106] OBJ_subject_directory_attributes */
 0x55,0x1D,0x1C,                              /* [5109] OBJ_issuing_distribution_point */
 0x55,0x1D,0x1D,                              /* [5112] OBJ_certificate_issuer */
-0x2A,0x81,0x1C,0xD7,0x63,0x01,0x01,0x01,     /* [5115] OBJ_ecdsa_with_SHA256 */
-0x2A,0x81,0x1C,0xD7,0x63,0x01,0x01,0x02,0x01,/* [5123] OBJ_X9_62_prime192v4 */
 };
 
 static ASN1_OBJECT nid_objs[NUM_NID]={
@@ -2014,9 +1996,6 @@ static ASN1_OBJECT nid_objs[NUM_NID]={
 	NID_issuing_distribution_point,3,&(lvalues[5109]),0},
 {"certificateIssuer","X509v3 Certificate Issuer",
 	NID_certificate_issuer,3,&(lvalues[5112]),0},
-{"ecdsa-with-SHA256","ecdsa-with-SHA256",NID_ecdsa_with_SHA256,8,
-	&(lvalues[5115]),0},
-{"prime192v4","prime192v4",NID_X9_62_prime192v4,9,&(lvalues[5123]),0},
 };
 
 static ASN1_OBJECT *sn_objs[NUM_SN]={
@@ -2266,7 +2245,6 @@ static ASN1_OBJECT *sn_objs[NUM_SN]={
 &(nid_objs[392]),/* "domain" */
 &(nid_objs[452]),/* "domainRelatedObject" */
 &(nid_objs[416]),/* "ecdsa-with-SHA1" */
-&(nid_objs[772]),/* "ecdsa-with-SHA256" */
 &(nid_objs[48]),/* "emailAddress" */
 &(nid_objs[132]),/* "emailProtection" */
 &(nid_objs[389]),/* "enterprises" */
@@ -2557,7 +2535,6 @@ static ASN1_OBJECT *sn_objs[NUM_SN]={
 &(nid_objs[409]),/* "prime192v1" */
 &(nid_objs[410]),/* "prime192v2" */
 &(nid_objs[411]),/* "prime192v3" */
-&(nid_objs[773]),/* "prime192v4" */
 &(nid_objs[412]),/* "prime239v1" */
 &(nid_objs[413]),/* "prime239v2" */
 &(nid_objs[414]),/* "prime239v3" */
@@ -3043,7 +3020,6 @@ static ASN1_OBJECT *ln_objs[NUM_LN]={
 &(nid_objs[70]),/* "dsaWithSHA1-old" */
 &(nid_objs[297]),/* "dvcs" */
 &(nid_objs[416]),/* "ecdsa-with-SHA1" */
-&(nid_objs[772]),/* "ecdsa-with-SHA256" */
 &(nid_objs[48]),/* "emailAddress" */
 &(nid_objs[632]),/* "encrypted track 2" */
 &(nid_objs[56]),/* "extendedCertificateAttributes" */
@@ -3323,7 +3299,6 @@ static ASN1_OBJECT *ln_objs[NUM_LN]={
 &(nid_objs[409]),/* "prime192v1" */
 &(nid_objs[410]),/* "prime192v2" */
 &(nid_objs[411]),/* "prime192v3" */
-&(nid_objs[773]),/* "prime192v4" */
 &(nid_objs[412]),/* "prime239v1" */
 &(nid_objs[413]),/* "prime239v2" */
 &(nid_objs[414]),/* "prime239v3" */
@@ -3886,7 +3861,6 @@ static ASN1_OBJECT *obj_objs[NUM_OBJ]={
 &(nid_objs[768]),/* OBJ_camellia_256_ofb128          0 3 4401 5 3 1 9 43 */
 &(nid_objs[759]),/* OBJ_camellia_256_cfb128          0 3 4401 5 3 1 9 44 */
 &(nid_objs[437]),/* OBJ_pilot                        0 9 2342 19200300 100 */
-&(nid_objs[772]),/* OBJ_ecdsa_with_SHA256            1 2 156 11235 1 1 1  */
 &(nid_objs[186]),/* OBJ_pkcs1                        1 2 840 113549 1 1 */
 &(nid_objs[27]),/* OBJ_pkcs3                        1 2 840 113549 1 3 */
 &(nid_objs[187]),/* OBJ_pkcs5                        1 2 840 113549 1 5 */
@@ -4040,7 +4014,6 @@ static ASN1_OBJECT *obj_objs[NUM_OBJ]={
 &(nid_objs[439]),/* OBJ_pilotAttributeSyntax         0 9 2342 19200300 100 3 */
 &(nid_objs[440]),/* OBJ_pilotObjectClass             0 9 2342 19200300 100 4 */
 &(nid_objs[441]),/* OBJ_pilotGroups                  0 9 2342 19200300 100 10 */
-&(nid_objs[773]),/* OBJ_X9_62_prime192v4             1 2 156 11235 1 1 2 1 */
 &(nid_objs[108]),/* OBJ_cast5_cbc                    1 2 840 113533 7 66 10 */
 &(nid_objs[112]),/* OBJ_pbeWithMD5AndCast5_CBC       1 2 840 113533 7 66 12 */
 &(nid_objs[ 6]),/* OBJ_rsaEncryption                1 2 840 113549 1 1 1 */
