@@ -1,0 +1,47 @@
+mainmenu_name 'Ralink Embedded Linux Configuration'
+mainmenu_option next_comment
+comment 'Select the Product you wish to target'
+choice 'Vendor' "ASUS CONFIG_REAL_VENDOR_ASUS
+                "
+if [ "$CONFIG_REAL_VENDOR_ASUS" = "y" ]; then
+choice 'ASUS Products' "EA-N66 CONFIG_DEFAULTS_ASUS_EAN66
+                         RP-N12 CONFIG_DEFAULTS_ASUS_RPN12
+                         RP-N14 CONFIG_DEFAULTS_ASUS_RPN14
+                         RP-N53 CONFIG_DEFAULTS_ASUS_RPN53
+                         RP-AC52 CONFIG_DEFAULTS_ASUS_RPAC52
+                         RP-AC56 CONFIG_DEFAULTS_ASUS_RPAC56
+                         WMP-N12 CONFIG_DEFAULTS_ASUS_WMPN12
+                	     "
+if [ "$CONFIG_DEFAULTS_ASUS_EAN66" = "y" ]; then
+choice   'Flash/SDRAM Size' "4M/32M   CONFIG_DEFSETTING_4M32M
+                            " 4M/32M
+define_bool CONFIG_DEFAULTS_RALINK_RT3883 y
+elif [ "$CONFIG_DEFAULTS_ASUS_RPN12" = "y" ]; then
+choice   'Flash/SDRAM Size' "4M/32M   CONFIG_DEFSETTING_4M32M
+                              4M/16M   CONFIG_DEFSETTING_4M16M
+                            " 4M/16M
+define_bool CONFIG_DEFAULTS_RALINK_MT7628 y
+elif [ "$CONFIG_DEFAULTS_ASUS_RPN14" = "y" ] || [ "$CONFIG_DEFAULTS_ASUS_RPN53" = "y" ] || [ "$CONFIG_DEFAULTS_ASUS_RPAC52" = "y" ] || [ "$CONFIG_DEFAULTS_ASUS_WMPN12" = "y" ]; then
+choice   'Flash/SDRAM Size' "8M/64M   CONFIG_DEFSETTING_8M64M
+                            " 8M/64M
+define_bool CONFIG_DEFAULTS_RALINK_MT7620 y
+elif [ "$CONFIG_DEFAULTS_ASUS_RPAC56" = "y" ]; then
+choice   'Flash/SDRAM Size' "8M/64M   CONFIG_DEFSETTING_8M64M
+                            " 8M/64M
+define_bool CONFIG_DEFAULTS_RALINK_MT7621 y
+fi
+fi
+endmenu
+mainmenu_option next_comment
+comment 'Kernel/Library/Defaults Selection'
+define_bool CONFIG_DEFAULTS_KERNEL_2_6_36 y
+string 'Cross Compiler Path' 			CONFIG_CROSS_COMPILER_PATH /opt/buildroot-gcc342/bin
+comment ' '
+bool 'Default all settings (lose changes)'	CONFIG_DEFAULTS_OVERRIDE
+bool 'Customize Kernel Settings'		CONFIG_DEFAULTS_KERNEL
+bool 'Customize Vendor/User Settings'		CONFIG_DEFAULTS_VENDOR
+bool 'Customize Busybox Settings'               CONFIG_DEFAULTS_BUSYBOX
+bool 'Customize uClibc Settings'                CONFIG_DEFAULTS_UCLIBC
+bool 'Customize uClibc++ Settings'              CONFIG_DEFAULTS_UCLIBC_PLUS_PLUS
+bool 'Update Default Vendor Settings'		CONFIG_DEFAULTS_VENDOR_UPDATE
+endmenu
