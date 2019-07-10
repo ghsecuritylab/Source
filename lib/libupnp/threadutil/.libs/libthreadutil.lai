@@ -5,10 +5,10 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname='libthreadutil.so.2'
+dlname=''
 
 # Names of this library.
-library_names='libthreadutil.so.2.0.0 libthreadutil.so.2 libthreadutil.so'
+library_names=''
 
 # The name of the static archive.
 old_library='libthreadutil.a'
