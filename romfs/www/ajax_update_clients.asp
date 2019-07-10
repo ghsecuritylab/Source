@@ -1,1 +1,0 @@
-client_list_array = [<% get_static_client(); %>];

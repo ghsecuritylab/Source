@@ -44,19 +44,19 @@ available_tags=" CXX"
 
 # ### BEGIN LIBTOOL CONFIG
 
-# Libtool was configured on host cs-6000-devshell-vm-7d40efea-21f8-46ca-b042-9fd385dab7af:
+# Libtool was configured on host cs-6000-devshell-vm-1004102d-29d1-4a86-bd0d-9a35e9a39b56:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"
 
 # Whether or not to build shared libraries.
-build_libtool_libs=no
+build_libtool_libs=yes
 
 # Whether or not to build static libraries.
 build_old_libs=yes
 
 # Whether or not to add -lc for building shared libraries.
-build_libtool_need_lc=yes
+build_libtool_need_lc=no
 
 # Whether or not to disallow shared libs when runtime libs are static
 allow_libtool_libs_with_static_runtimes=no
@@ -88,7 +88,7 @@ with_gcc=yes
 EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="\"/opt/buildroot-gcc342/bin\"/mipsel-linux-uclibc-ld"
+LD="/opt/buildroot-gcc342/bin/mipsel-linux-ld"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -109,7 +109,7 @@ DLLTOOL="dlltool"
 OBJDUMP="objdump"
 
 # Used on cygwin: assembler.
-AS=""/opt/buildroot-gcc342/bin"/mipsel-linux-uclibc-as "
+AS="as"
 
 # The name of the directory that contains temporary libtool files.
 objdir=.libs
@@ -168,10 +168,10 @@ link_static_flag="-static"
 no_builtin_flag=" -fno-builtin"
 
 # Compiler flag to allow reflexive dlopens.
-export_dynamic_flag_spec=""
+export_dynamic_flag_spec="\${wl}--export-dynamic"
 
 # Compiler flag to generate shared objects directly from archives.
-whole_archive_flag_spec=""
+whole_archive_flag_spec="\${wl}--whole-archive\$convenience \${wl}--no-whole-archive"
 
 # Compiler flag to generate thread-safe objects.
 thread_safe_flag_spec=""
@@ -202,8 +202,11 @@ old_archive_from_new_cmds=""
 old_archive_from_expsyms_cmds=""
 
 # Commands used to build and install a shared archive.
-archive_cmds=""
-archive_expsym_cmds=""
+archive_cmds="\$CC -shared \$libobjs \$deplibs \$compiler_flags \${wl}-soname \$wl\$soname -o \$lib"
+archive_expsym_cmds="\$echo \\\"{ global:\\\" > \$output_objdir/\$libname.ver~
+cat \$export_symbols | sed -e \\\"s/\\\\(.*\\\\)/\\\\1;/\\\" >> \$output_objdir/\$libname.ver~
+\$echo \\\"local: *; };\\\" >> \$output_objdir/\$libname.ver~
+        \$CC -shared \$libobjs \$deplibs \$compiler_flags \${wl}-soname \$wl\$soname \${wl}-version-script \${wl}\$output_objdir/\$libname.ver -o \$lib"
 postinstall_cmds=""
 postuninstall_cmds=""
 
@@ -263,7 +266,7 @@ global_symbol_to_cdecl="sed -n -e 's/^. .* \\(.*\\)\$/extern int \\1;/p'"
 global_symbol_to_c_name_address="sed -n -e 's/^: \\([^ ]*\\) \$/  {\\\"\\1\\\", (lt_ptr) 0},/p' -e 's/^[BCDEGRST] \\([^ ]*\\) \\([^ ]*\\)\$/  {\"\\2\", (lt_ptr) \\&\\2},/p'"
 
 # This is the shared library runtime path variable.
-runpath_var=
+runpath_var=LD_RUN_PATH
 
 # This is the shared library path variable.
 shlibpath_var=LD_LIBRARY_PATH
@@ -279,7 +282,7 @@ hardcode_into_libs=yes
 
 # Flag to hardcode $libdir into a binary during linking.
 # This must work even if $libdir does not exist.
-hardcode_libdir_flag_spec=""
+hardcode_libdir_flag_spec="\${wl}--rpath \${wl}\$libdir"
 
 # If ld is used when linking, flag to hardcode $libdir into
 # a binary during linking. This must work even if $libdir does
@@ -307,7 +310,7 @@ hardcode_automatic=no
 
 # Variables whose values should be saved in libtool wrapper scripts and
 # restored at relink time.
-variables_saved_for_relink="PATH   GCC_EXEC_PREFIX COMPILER_PATH LIBRARY_PATH"
+variables_saved_for_relink="PATH  LD_RUN_PATH GCC_EXEC_PREFIX COMPILER_PATH LIBRARY_PATH"
 
 # Whether libtool must link a program against all its dependency libraries.
 link_all_deplibs=unknown
@@ -6783,13 +6786,13 @@ build_old_libs=`case $build_libtool_libs in yes) $echo no;; *) $echo yes;; esac`
 # End:
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
-# Libtool was configured on host cs-6000-devshell-vm-7d40efea-21f8-46ca-b042-9fd385dab7af:
+# Libtool was configured on host cs-6000-devshell-vm-1004102d-29d1-4a86-bd0d-9a35e9a39b56:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"
 
 # Whether or not to build shared libraries.
-build_libtool_libs=no
+build_libtool_libs=yes
 
 # Whether or not to build static libraries.
 build_old_libs=yes
@@ -6801,7 +6804,7 @@ build_libtool_need_lc=no
 allow_libtool_libs_with_static_runtimes=no
 
 # Whether or not to optimize for fast installation.
-fast_install=needless
+fast_install=yes
 
 # The host system.
 host_alias=mipsel-linux
@@ -6827,7 +6830,7 @@ with_gcc=yes
 EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="\"/opt/buildroot-gcc342/bin\"/mipsel-linux-uclibc-ld"
+LD="/opt/buildroot-gcc342/bin/mipsel-linux-ld"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -6848,7 +6851,7 @@ DLLTOOL="dlltool"
 OBJDUMP="objdump"
 
 # Used on cygwin: assembler.
-AS=""/opt/buildroot-gcc342/bin"/mipsel-linux-uclibc-as "
+AS="as"
 
 # The name of the directory that contains temporary libtool files.
 objdir=.libs
@@ -6907,10 +6910,10 @@ link_static_flag="-static"
 no_builtin_flag=" -fno-builtin"
 
 # Compiler flag to allow reflexive dlopens.
-export_dynamic_flag_spec=""
+export_dynamic_flag_spec="\${wl}--export-dynamic"
 
 # Compiler flag to generate shared objects directly from archives.
-whole_archive_flag_spec=""
+whole_archive_flag_spec="\${wl}--whole-archive\$convenience \${wl}--no-whole-archive"
 
 # Compiler flag to generate thread-safe objects.
 thread_safe_flag_spec=""
@@ -6941,8 +6944,8 @@ old_archive_from_new_cmds=""
 old_archive_from_expsyms_cmds=""
 
 # Commands used to build and install a shared archive.
-archive_cmds="\$CC -shared -nostdlib \$predep_objects \$libobjs \$deplibs \$postdep_objects \$compiler_flags -o \$lib"
-archive_expsym_cmds=""
+archive_cmds="\$CC -shared -nostdlib \$predep_objects \$libobjs \$deplibs \$postdep_objects \$compiler_flags \${wl}-soname \$wl\$soname -o \$lib"
+archive_expsym_cmds="\$CC -shared -nostdlib \$predep_objects \$libobjs \$deplibs \$postdep_objects \$compiler_flags \${wl}-soname \$wl\$soname \${wl}-retain-symbols-file \$wl\$export_symbols -o \$lib"
 postinstall_cmds=""
 postuninstall_cmds=""
 
@@ -7002,7 +7005,7 @@ global_symbol_to_cdecl="sed -n -e 's/^. .* \\(.*\\)\$/extern int \\1;/p'"
 global_symbol_to_c_name_address="sed -n -e 's/^: \\([^ ]*\\) \$/  {\\\"\\1\\\", (lt_ptr) 0},/p' -e 's/^[BCDEGRST] \\([^ ]*\\) \\([^ ]*\\)\$/  {\"\\2\", (lt_ptr) \\&\\2},/p'"
 
 # This is the shared library runtime path variable.
-runpath_var=
+runpath_var=LD_RUN_PATH
 
 # This is the shared library path variable.
 shlibpath_var=LD_LIBRARY_PATH
@@ -7018,7 +7021,7 @@ hardcode_into_libs=yes
 
 # Flag to hardcode $libdir into a binary during linking.
 # This must work even if $libdir does not exist.
-hardcode_libdir_flag_spec=""
+hardcode_libdir_flag_spec="\${wl}--rpath \${wl}\$libdir"
 
 # If ld is used when linking, flag to hardcode $libdir into
 # a binary during linking. This must work even if $libdir does
@@ -7046,7 +7049,7 @@ hardcode_automatic=no
 
 # Variables whose values should be saved in libtool wrapper scripts and
 # restored at relink time.
-variables_saved_for_relink="PATH LD_LIBRARY_PATH  GCC_EXEC_PREFIX COMPILER_PATH LIBRARY_PATH"
+variables_saved_for_relink="PATH LD_LIBRARY_PATH LD_RUN_PATH GCC_EXEC_PREFIX COMPILER_PATH LIBRARY_PATH"
 
 # Whether libtool must link a program against all its dependency libraries.
 link_all_deplibs=unknown
