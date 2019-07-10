@@ -96,7 +96,7 @@ AR = ar
 AUTOCONF = ${SHELL} /home/prokascc/Source/lib/libupnp/config.aux/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/prokascc/Source/lib/libupnp/config.aux/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/prokascc/Source/lib/libupnp/config.aux/missing --run automake-1.9
-AWK = mawk
+AWK = gawk
 CC = /opt/buildroot-gcc342/bin/mipsel-linux-gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS =  -Os -Wall

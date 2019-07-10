@@ -20,31 +20,33 @@ deps_applets/usage := \
     $(wildcard include/config/c.h) \
     $(wildcard include/config/.h) \
     $(wildcard include/config/ile.h) \
-    $(wildcard include/config/ntrant.h) \
     $(wildcard include/config/tify/level.h) \
   /usr/include/features.h \
     $(wildcard include/config/c11.h) \
     $(wildcard include/config/c99.h) \
     $(wildcard include/config/c95.h) \
+    $(wildcard include/config/cxx11.h) \
     $(wildcard include/config/ix.h) \
     $(wildcard include/config/en2kxsi.h) \
     $(wildcard include/config/en2k8xsi.h) \
     $(wildcard include/config/gefile.h) \
-    $(wildcard include/config/cxx11.h) \
+    $(wildcard include/config/recated/gets.h) \
     $(wildcard include/config/ix/implicitly.h) \
     $(wildcard include/config/ern/inlines.h) \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
-    $(wildcard include/config/espaces.h) \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/lib/gcc/x86_64-linux-gnu/6/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/getopt.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /home/prokascc/Source/user/busybox/include/usage.h \
     $(wildcard include/config/ture/adduser/to/group.h) \
     $(wildcard include/config/ture/brctl/show.h) \
