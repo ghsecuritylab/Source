@@ -959,7 +959,7 @@ configure:19548: $? = 0
 configure:19548: result: yes
 configure:19554: checking for _doprnt
 configure:19554: /opt/buildroot-gcc342/bin/mipsel-linux-gcc -o conftest  -Os -Wall   conftest.c  >&5
-/tmp/ccKLLkw5.o: In function `main':conftest.c:(.text+0x18): undefined reference to `_doprnt'
+/tmp/ccuYUGd6.o: In function `main':conftest.c:(.text+0x18): undefined reference to `_doprnt'
 collect2: ld returned 1 exit status
 configure:19554: $? = 1
 configure: failed program was:
@@ -1193,7 +1193,7 @@ configure:19748: checking whether pthreads work without any flags
 configure:19836: /opt/buildroot-gcc342/bin/mipsel-linux-gcc -o conftest  -Os -Wall    conftest.c   >&5
 conftest.c: In function `main':
 conftest.c:55: warning: 'th' might be used uninitialized in this function
-/tmp/ccyoaXam.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
+/tmp/ccaOLhjr.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
 :conftest.c:(.text+0x48): undefined reference to `_pthread_cleanup_push'
 :conftest.c:(.text+0x60): undefined reference to `pthread_create'
 :conftest.c:(.text+0x7c): undefined reference to `_pthread_cleanup_pop'
@@ -1266,7 +1266,7 @@ configure:19836: /opt/buildroot-gcc342/bin/mipsel-linux-gcc -o conftest  -Os -Wa
 mipsel-linux-gcc: unrecognized option `-Kthread'
 conftest.c: In function `main':
 conftest.c:55: warning: 'th' might be used uninitialized in this function
-/tmp/ccG0uNuw.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
+/tmp/ccM8CW4e.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
 :conftest.c:(.text+0x48): undefined reference to `_pthread_cleanup_push'
 :conftest.c:(.text+0x60): undefined reference to `pthread_create'
 :conftest.c:(.text+0x7c): undefined reference to `_pthread_cleanup_pop'
@@ -1339,7 +1339,7 @@ configure:19836: /opt/buildroot-gcc342/bin/mipsel-linux-gcc -o conftest  -Os -Wa
 mipsel-linux-gcc: unrecognized option `-kthread'
 conftest.c: In function `main':
 conftest.c:55: warning: 'th' might be used uninitialized in this function
-/tmp/ccgPMSZz.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
+/tmp/ccEe9tjm.o: In function `main':conftest.c:(.text+0x18): undefined reference to `pthread_join'
 :conftest.c:(.text+0x48): undefined reference to `_pthread_cleanup_push'
 :conftest.c:(.text+0x60): undefined reference to `pthread_create'
 :conftest.c:(.text+0x7c): undefined reference to `_pthread_cleanup_pop'
